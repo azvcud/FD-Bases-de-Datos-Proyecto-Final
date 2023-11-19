@@ -42,6 +42,7 @@ public class ServiceLocator {
 	}
 
 	/**
+         * Método constructor privado. Implementación de Singleton
 	 * @throws Exception
 	 *             dice si no se pudo crear la conexion
 	 */
