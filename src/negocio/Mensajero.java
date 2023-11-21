@@ -8,7 +8,7 @@ package negocio;
  *
  * @author David
  */
-public class SolicitanteVO {
+public class Mensajero {
     private int    k_numeroDocumento;
     private String k_tipoDocumento;
     private String n_primerNombre;
@@ -19,8 +19,16 @@ public class SolicitanteVO {
     private int    q_telefono;
     private String n_correoElectronico;
     private String n_direccion;
+    private String n_nacionalidad;
+    private int q_seguridadSocial;
+    private String m_medioDeServicio;
+    private String m_medioDeTransporte;
+    private String m_matricula;
+    private String m_marca;
+    private int    v_pago;
+    private int    v_calificacion;
 
-    public SolicitanteVO() {
+    public Mensajero() {
     }
 
     public int getK_numeroDocumento() {
@@ -101,5 +109,76 @@ public class SolicitanteVO {
 
     public void setN_direccion(String n_direccion) {
         this.n_direccion = n_direccion;
-    }   
+    }
+
+    public String getN_nacionalidad() {
+        return n_nacionalidad;
+    }
+
+    public void setN_nacionalidad(String n_nacionalidad) {
+        this.n_nacionalidad = n_nacionalidad;
+    }
+
+    public int getQ_seguridadSocial() {
+        return q_seguridadSocial;
+    }
+
+    public void setQ_seguridadSocial(int q_seguridadSocial) {
+        this.q_seguridadSocial = q_seguridadSocial;
+    }
+
+    public String getM_medioDeServicio() {
+        return m_medioDeServicio;
+    }
+
+    public void setM_medioDeServicio(String m_medioDeServicio) {
+        this.m_medioDeServicio = m_medioDeServicio;
+    }
+
+    public String getM_medioDeTransporte() {
+        return m_medioDeTransporte;
+    }
+
+    public void setM_medioDeTransporte(String m_medioDeTransporte) {
+        this.m_medioDeTransporte = m_medioDeTransporte;
+    }
+
+    public String getM_matricula() {
+        return m_matricula;
+    }
+
+    public void setM_matricula(String m_matricula) {
+        this.m_matricula = m_matricula;
+    }
+
+    public String getM_marca() {
+        return m_marca;
+    }
+
+    public void setM_marca(String m_marca) {
+        this.m_marca = m_marca;
+    }
+
+    public int getV_pago() {
+        return v_pago;
+    }
+
+    public void setV_pago(int v_pago) {
+        this.v_pago = v_pago;
+    }
+
+    public int getV_calificacion() {
+        return v_calificacion;
+    }
+
+    public void setV_calificacion(int v_calificacion) {
+        this.v_calificacion = v_calificacion;
+    }
+    
+    
+    
+    
+    
+    
+    
 }
