@@ -5,8 +5,8 @@
 package negocio;
 
 /**
- *
- * @author David
+ * Clase que encapsula los datos del Estado en que se encuentra una actividad
+ * @author David.
  */
 public class Estado {
     private int    k_idEstado;

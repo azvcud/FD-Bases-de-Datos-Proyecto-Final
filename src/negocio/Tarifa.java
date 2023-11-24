@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de la Tarifa correspondiente a un servicio
  * @author David
  */
 public class Tarifa {

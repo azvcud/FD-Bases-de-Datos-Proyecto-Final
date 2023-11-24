@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de un Servicio
  * @author David
  */
 public class Servicio {

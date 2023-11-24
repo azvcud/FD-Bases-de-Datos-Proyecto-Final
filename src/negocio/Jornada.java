@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de la Jornada del empleado.
  * @author David
  */
 public class Jornada {
