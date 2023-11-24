@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de la Actividad
  * @author David
  */
 public class Actividad {

@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de la Ciudad
  * @author David
  */
 public class Ciudad {

@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos del pago correspondiente a un empleado.
  * @author David
  */
 public class Pago {

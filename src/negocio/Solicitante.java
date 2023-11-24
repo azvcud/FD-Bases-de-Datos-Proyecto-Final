@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de un Solicitante de un servicio
  * @author David
  */
 public class Solicitante {
