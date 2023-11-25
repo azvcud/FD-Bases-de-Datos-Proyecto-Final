@@ -40,7 +40,18 @@ public class SolicitanteGestor {
 
       solicitanteDAO.registrarSolicitante(solicitante);
     }
-
+     
+     
+    public void actualizarDatos(int k_numeroDocumento, String n_primerNombre, String n_segundonombre,
+             String n_primerapellido, String n_segundoapellido, String n_sexo,int q_telefono, String n_correoelectronico, String n_direccion) throws RHException {
+      solicitanteDAO.modificarSolicitante(k_numeroDocumento, n_primerNombre, n_segundonombre, n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico, n_direccion);
+    }
+    
+    public void eliminarSolicitante(int k_numeroDocumento) throws RHException {
+      solicitanteDAO.eliminarSolicitante(k_numeroDocumento);
+    }
+    
+        
     public Solicitante getSolicitante() {
         return solicitante;
     }
