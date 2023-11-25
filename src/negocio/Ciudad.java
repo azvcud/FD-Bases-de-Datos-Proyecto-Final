@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de la Ciudad en la que se va a realizar el servicio.
  * @author David
  */
 public class Ciudad {

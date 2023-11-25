@@ -8,7 +8,7 @@ import java.sql.Time;
 import java.time.LocalTime;
 
 /**
- *
+ * Clase que encapsula los datos de un Servicio
  * @author David
  */
 public class Servicio {

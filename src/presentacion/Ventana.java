@@ -22,7 +22,13 @@ import negocio.RecursosHumanos;
 
 import util.RHException;
 
+/**
+ * Clase ventana que representa la intefaz grafica de la aplicación 
+ * @author Soky
+ */
+
 public class Ventana extends JFrame {
+    //Declaración de los componentes de la interfaz grafica
     private RecursosHumanos rh;
     private BorderLayout layoutMain = new BorderLayout();
     private JPanel panelCenter = new JPanel();
@@ -55,6 +61,11 @@ public class Ventana extends JFrame {
     private JTextField jTextField6 = new JTextField();
     private JLabel jLabel7 = new JLabel();
 
+    /**
+     * Constructor de la clase Ventana.
+     * Inicia y configura la interfaz grafica de usuario.
+     */
+    
     public Ventana() {
         try {
             jbInit();
@@ -63,7 +74,13 @@ public class Ventana extends JFrame {
         }
     }
 
+    /**
+     * Inicia y configura la interfaz grafica de usuario.
+     * @throws Exception  En caso de ocurrir algún error durante la inicialización
+     */
+    
     private void jbInit() throws Exception {
+        //Configuración de la interfaz gráfica.
         rh = new RecursosHumanos();
         this.setJMenuBar( menuBar );
         this.getContentPane().setLayout( layoutMain );
@@ -77,6 +94,7 @@ public class Ventana extends JFrame {
         menuHelpAbout.setText( "About" );
         menuHelpAbout.addActionListener( new ActionListener() { public void actionPerformed( ActionEvent ae ) { helpAbout_ActionPerformed( ae ); } } );
         statusBar.setText( "" );
+        //Configuración de botones, campos de texto y sus respectivos eventos.
         buttonOpen.setToolTipText( "Open File" );
         buttonOpen.setIcon( imageOpen );
         buttonClose.setToolTipText( "Close File" );
@@ -129,6 +147,8 @@ public class Ventana extends JFrame {
                     jTextField6_actionPerformed(e);
                 }
             });
+        
+        //Agregación de los elementos a los paneles y a la ventana.
         jLabel7.setText("Salario");
         jLabel7.setBounds(new Rectangle(45, 150, 34, 14));
         menuFile.add( menuFileExit );
@@ -157,14 +177,28 @@ public class Ventana extends JFrame {
         this.getContentPane().add( panelCenter, BorderLayout.CENTER );
     }
 
+    /**
+     * Metodo para manejar la salida del programa
+     * @param e Evento que activa la salida del programa
+     */
     void fileExit_ActionPerformed(ActionEvent e) {
         System.exit(0);
     }
 
+    /**
+     * Metodo para mostrar información "About" en la aplicación
+     * @param e Evento que activa la muestra de información "About"
+     */
     void helpAbout_ActionPerformed(ActionEvent e) {
         JOptionPane.showMessageDialog(this, new Ventana_AboutBoxPanel1(), "About", JOptionPane.PLAIN_MESSAGE);
     }
 
+    /**
+     * Metodo para incluir un empleado en la base de datos. 
+     * @param e Evento que toma los valores y muestra un mensaje de error en caso de falla
+     * ó un mensaje de confirmación en caso de exito al incluir.
+     */
+    
     private void jButton1_actionPerformed(ActionEvent e) {
           try {
               System.out.println(jTextField5.getText());
@@ -182,6 +216,11 @@ public class Ventana extends JFrame {
     private void buttonClose_actionPerformed(ActionEvent e) {
     }
 
+    /**
+     * Metodo para actualizar el salario de un empleado en la base de datos.
+     * @param e Evento que toma los valores y los actualiza en la base de datos, muestra un mensaje de confirmación en caso de exito
+     * ó en caso de falla muestra un mensaje de error en la introduccion o en el formato de los datos.
+     */
     private void jButton2_actionPerformed(ActionEvent e) {
       try {
           Double salario = Double.parseDouble(jTextField6.getText());
