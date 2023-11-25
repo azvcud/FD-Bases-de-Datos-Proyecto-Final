@@ -4,6 +4,9 @@
  */
 package negocio;
 
+import java.sql.Time;
+import java.time.LocalTime;
+
 /**
  *
  * @author David
@@ -45,6 +48,10 @@ public class Servicio {
     public void setF_horaDeInicio(String f_horaDeInicio) {
         this.f_horaDeInicio = f_horaDeInicio;
     }
+
+    
+
+    
 
     public String getF_fecha() {
         return f_fecha;
@@ -93,6 +100,7 @@ public class Servicio {
     public void setK_idCiudad(int k_idCiudad) {
         this.k_idCiudad = k_idCiudad;
     }
+
    
     
    

@@ -11,8 +11,8 @@ package negocio;
 public class Ciudad {
     private int    k_idCiudad;
     private String n_nombreCiudad;
-    private float  n_primerNombre;
-    private float  n_segundoNombre;
+    private double  v_tarifaPorTrayecto;
+    private double  v_porcentajeComision;
 
     public Ciudad() {
     }
@@ -33,24 +33,23 @@ public class Ciudad {
         this.n_nombreCiudad = n_nombreCiudad;
     }
 
-    public float getN_primerNombre() {
-        return n_primerNombre;
+    public double getV_tarifaPorTrayecto() {
+        return v_tarifaPorTrayecto;
     }
 
-    public void setN_primerNombre(float n_primerNombre) {
-        this.n_primerNombre = n_primerNombre;
+    public void setV_tarifaPorTrayecto(double v_tarifaPorTrayecto) {
+        this.v_tarifaPorTrayecto = v_tarifaPorTrayecto;
     }
 
-    public float getN_segundoNombre() {
-        return n_segundoNombre;
+    public double getV_porcentajeComision() {
+        return v_porcentajeComision;
     }
 
-    public void setN_segundoNombre(float n_segundoNombre) {
-        this.n_segundoNombre = n_segundoNombre;
+    public void setV_porcentajeComision(double v_porcentajeComision) {
+        this.v_porcentajeComision = v_porcentajeComision;
     }
-   
+
     
-    
-    
+  
     
 }
