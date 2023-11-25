@@ -39,9 +39,8 @@ public class Cliente {
      * 
      * @param args 
      */
-    
-    
-    /*
+
+  /*
     public static void main(String[] args) {
         try {
             //Configuración de la apariencia y comportamiento del sistema
@@ -51,6 +50,5 @@ public class Cliente {
         }
         //Creacion de una instancia cliente que permita iniciar el sismtema
         new Cliente();
-
-      */
+     */
     }
