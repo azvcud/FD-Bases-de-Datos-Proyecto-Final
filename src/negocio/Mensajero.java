@@ -20,13 +20,13 @@ public class Mensajero {
     private String n_correoElectronico;
     private String n_direccion;
     private String n_nacionalidad;
-    private int q_seguridadSocial;
+    private int    q_seguridadSocial;
     private String m_medioDeServicio;
     private String m_medioDeTransporte;
     private String m_matricula;
     private String m_marca;
-    private int    v_pago;
-    private int    v_calificacion;
+    private double v_pago;
+    private double v_calificacion;
 
     public Mensajero() {
     }
@@ -159,26 +159,23 @@ public class Mensajero {
         this.m_marca = m_marca;
     }
 
-    public int getV_pago() {
+    public double getV_pago() {
         return v_pago;
     }
 
-    public void setV_pago(int v_pago) {
+    public void setV_pago(double v_pago) {
         this.v_pago = v_pago;
     }
 
-    public int getV_calificacion() {
+    public double getV_calificacion() {
         return v_calificacion;
     }
 
-    public void setV_calificacion(int v_calificacion) {
+    public void setV_calificacion(double v_calificacion) {
         this.v_calificacion = v_calificacion;
     }
-    
-    
-    
-    
-    
+
+   
     
     
 }

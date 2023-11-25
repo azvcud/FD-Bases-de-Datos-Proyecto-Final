@@ -4,6 +4,9 @@
  */
 package negocio;
 
+import java.sql.Time;
+import java.time.LocalTime;
+
 /**
  * Clase que encapsula los datos de un Servicio
  * @author David
@@ -15,9 +18,11 @@ public class Servicio {
    private String f_fecha;
    private double q_calificacion;
    private int    q_cantidadDeTrayectos; 
-   private int    k_numeroDocumento;
-   private String k_tipoDocumento;
+   private int    k_numeroDocumentoM;
+   private String k_tipoDocumentoM;
    private int    k_idCiudad;
+   private int    k_numeroDocumentoS;
+   private String k_tipoDocumentoS;
 
     public Servicio() {
     }
@@ -46,6 +51,10 @@ public class Servicio {
         this.f_horaDeInicio = f_horaDeInicio;
     }
 
+    
+
+    
+
     public String getF_fecha() {
         return f_fecha;
     }
@@ -70,21 +79,39 @@ public class Servicio {
         this.q_cantidadDeTrayectos = q_cantidadDeTrayectos;
     }
 
-    public int getK_numeroDocumento() {
-        return k_numeroDocumento;
+    public int getK_numeroDocumentoM() {
+        return k_numeroDocumentoM;
     }
 
-    public void setK_numeroDocumento(int k_numeroDocumento) {
-        this.k_numeroDocumento = k_numeroDocumento;
+    public void setK_numeroDocumentoM(int k_numeroDocumentoM) {
+        this.k_numeroDocumentoM = k_numeroDocumentoM;
     }
 
-    public String getK_tipoDocumento() {
-        return k_tipoDocumento;
+    public String getK_tipoDocumentoM() {
+        return k_tipoDocumentoM;
     }
 
-    public void setK_tipoDocumento(String k_tipoDocumento) {
-        this.k_tipoDocumento = k_tipoDocumento;
+    public void setK_tipoDocumentoM(String k_tipoDocumentoM) {
+        this.k_tipoDocumentoM = k_tipoDocumentoM;
     }
+
+    public int getK_numeroDocumentoS() {
+        return k_numeroDocumentoS;
+    }
+
+    public void setK_numeroDocumentoS(int k_numeroDocumentoS) {
+        this.k_numeroDocumentoS = k_numeroDocumentoS;
+    }
+
+    public String getK_tipoDocumentoS() {
+        return k_tipoDocumentoS;
+    }
+
+    public void setK_tipoDocumentoS(String k_tipoDocumentoS) {
+        this.k_tipoDocumentoS = k_tipoDocumentoS;
+    }
+
+   
 
     public int getK_idCiudad() {
         return k_idCiudad;
@@ -93,6 +120,7 @@ public class Servicio {
     public void setK_idCiudad(int k_idCiudad) {
         this.k_idCiudad = k_idCiudad;
     }
+
    
     
    
