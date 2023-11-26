@@ -9,14 +9,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import negocio.Mensajero;
-
-
 import negocio.Solicitante;
-
 import util.RHException;
 import util.ServiceLocator;
 
-
+/**
+ * Esta clase encapsula el acceso a la base de datos para el Mensajero
+ * @author Soky
+ */
 public class MensajeroDAO {
     /*
      * Constructor de la clase
@@ -24,23 +24,22 @@ public class MensajeroDAO {
     public MensajeroDAO(){
   
     }
-    /**
-     * Incluye una nueva fila en la tabla EMPLOYEES.
-     * @throws RHException
-     */
     
-     
+    /**
+     * Registra un nuevo mensajero en la base de datos.
+     * @param mensajero Mensajero a intertar en la base de datos.
+     * @throws RHException 
+     */
     public void registrarMensajero(Mensajero mensajero) throws RHException {
       try {
-          
-        
-       
+        //Prepara la inserción de un Mensajero en la base de datos
         String strSQL = "INSERT INTO mensajero (k_numeroDocumento, k_tipodocumento, n_primerNombre, n_segundonombre,"
                 + " n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico,n_direccion,"
                 + " n_nacionalidad, q_seguridadsocial, n_mediodeservicio, n_mediodetransporte,"
                 + " n_matricula, n_marca, v_pago, v_calificacion) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Connection conexion = ServiceLocator.getInstance().tomarConexion();
         PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+        //Establece los parametros para insertar el Mensajero
         prepStmt.setInt(1, mensajero.getK_numeroDocumento()); 
         prepStmt.setString(2, mensajero.getK_tipoDocumento()); 
         prepStmt.setString(3, mensajero.getN_primerNombre()); 
@@ -59,14 +58,17 @@ public class MensajeroDAO {
         prepStmt.setString(16, mensajero.getM_marca()); 
         prepStmt.setDouble(17, mensajero.getV_pago());   
         prepStmt.setDouble(18, mensajero.getV_calificacion());
-       
+        // Ejecuta la inserción y realiza el commit de los datos
         prepStmt.executeUpdate();
         prepStmt.close();
         ServiceLocator.getInstance().commit();
       } catch (SQLException e) {
+          // En caso de error en la creación del Mensajero realiza un rollback y lanza la excepción
+          // RHExceptión mostranto de que no pudo registrar el Mensajero
            ServiceLocator.getInstance().rollback();
            throw new RHException( "MensajeroDAO", "No pudo crear el mensajero"+ e.getMessage());
       }  finally {
+          // Finaliza la conexión con la base de datos.
          ServiceLocator.getInstance().liberarConexion();
       }
       
@@ -74,5 +76,3 @@ public class MensajeroDAO {
     
      
  }
-
-
