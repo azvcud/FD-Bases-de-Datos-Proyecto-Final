@@ -4,6 +4,8 @@
  */
 package presentacion;
 
+import aplicacion.MediadorVistas;
+import aplicacion.VistasConcretas;
 import gestor.CiudadGestor;
 import gestor.MensajeroGestor;
 import gestor.PagoServicioGestor;
@@ -38,6 +40,7 @@ public class Consola {
         PagoServicioGestor serpagoges;
         serpagoges = new PagoServicioGestor();
         
+        MediadorVistas aplicacion = new VistasConcretas();
          
        /*  //Prueba de insersion en Solicitante     
         try { 
@@ -79,7 +82,8 @@ public class Consola {
               
           }   */    
         
-         //Prueba de insersion en Servicio    
+         //Prueba de insersion en Servicio  
+        /*
         try { 
               System.out.println("PruebaServicio");
               
@@ -89,7 +93,7 @@ public class Consola {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
          }         
-         
+        
          //Prueba de insersion en PagoServicio    
         try { 
               System.out.println("PruebaPagoServicio");
@@ -99,9 +103,8 @@ public class Consola {
           } catch (RHException f) {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
-         }  
-        
-        
+         }
+         */
          
         
         
