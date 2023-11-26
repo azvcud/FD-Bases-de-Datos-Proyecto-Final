@@ -14,12 +14,15 @@ import javax.swing.JOptionPane;
 import util.RHException;
 
 /**
- *
+ * Clase que representa la aplicación principal.
  * @author amirz
  */
 public class Consola {
      
-     
+    /**
+     * Metodo principal de la aplicación.
+     * @param args 
+     */
     public  static void main(String[] args) {
         
         SolicitanteGestor sg;

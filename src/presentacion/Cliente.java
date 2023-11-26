@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
- * Clase que representa la aplicación principal
+ * Clase que representa la parte de cliente
  * @author Soky
  */
 public class Cliente {
     
     /**
-     * Constructo de la clase Cliente.
+     * Constructor de la clase Cliente.
      * Crea y muestra una ventana centrada al iniciar la aplicaión.
      */
     
