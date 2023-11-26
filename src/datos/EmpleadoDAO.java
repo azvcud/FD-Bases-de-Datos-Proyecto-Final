@@ -1,3 +1,5 @@
+//Clase a ELIMINAR
+
 package datos;
 
 import java.sql.Connection;
@@ -104,8 +106,8 @@ public class EmpleadoDAO {
     
     /**
      * Busca el empleado identificado por el ID y actualiza su salario en la Base de datos.
-     * @param id Id del empleado cuyo salario será actualizado.
-     * @param salario nuevo salario a actualizar en la base de datos
+     * @param id        Id del empleado cuyo salario será actualizado.
+     * @param salario   nuevo salario a actualizar en la base de datos
      * @throws RHException 
      */
     public void actualizarSalario(int id, Double salario) throws RHException {
