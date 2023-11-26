@@ -4,24 +4,24 @@
  */
 package aplicacion;
 
-import gestor.MensajeroGestor;
+import gestor.SolicitanteGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import presentacion.VistaRegistroMensajero;
+import presentacion.VistaRegistroSolicitante;
 
 /**
  *
  * @author amirz
  */
-public class RegistroMensajero implements ActionListener {
+public class RegistroSolicitante implements ActionListener {
     
     private Aplicacion mediador;
-    private VistaRegistroMensajero vista;
-    private MensajeroGestor gestorMensajero;
-
-    public RegistroMensajero(VistaRegistroMensajero vista, MensajeroGestor gestorMensajero, Aplicacion mediador) {
+    private VistaRegistroSolicitante vista;
+    private SolicitanteGestor gestorSolicitante;
+    
+    public RegistroSolicitante(VistaRegistroSolicitante vista, SolicitanteGestor gestorSolicitante, Aplicacion mediador) {
         this.vista = vista;
-        this.gestorMensajero = gestorMensajero;
+        this.gestorSolicitante = gestorSolicitante;
         this.mediador = mediador;
     }
 

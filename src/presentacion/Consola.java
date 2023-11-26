@@ -27,6 +27,7 @@ public class Consola {
      */
     public  static void main(String[] args) {
         
+        /*
         SolicitanteGestor sg;
         sg = new SolicitanteGestor();
         MensajeroGestor mg;
@@ -39,6 +40,7 @@ public class Consola {
         serg = new ServicioGestor();
         PagoServicioGestor serpagoges;
         serpagoges = new PagoServicioGestor();
+        */
         
         Aplicacion aplicacion = new MediadorAplicacion();
          

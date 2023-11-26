@@ -16,25 +16,28 @@ public class InicioSesion implements ActionListener {
     
     private Aplicacion mediador;
     private VistaInicioSesion vista;
+    //Gestor
     
     //Pueden modificar el constructor en caso de que necesite uno o más gestores
     public InicioSesion(VistaInicioSesion vista, Aplicacion mediador) {
         this.vista = vista;
         this.mediador = mediador;
         
-        this.vista.inicioMensajero.addActionListener(this);
-        this.vista.inicioSolicitante.addActionListener(this);
-        this.vista.registroMensajero.addActionListener(this);
-        this.vista.registroSolicitante.addActionListener(this);
+        this.vista.btnInicioMensajero.addActionListener(this);
+        this.vista.btnInicioSolicitante.addActionListener(this);
+        this.vista.btnRegistroMensajero.addActionListener(this);
+        this.vista.btnRegistroSolicitante.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.registroMensajero) { mediador.notificar(this, "Registrar mensajero"); }
+        if (e.getSource() == vista.btnRegistroMensajero) { mediador.notificar(this, "Registrar mensajero"); }
+        if (e.getSource() == vista.btnRegistroSolicitante) { mediador.notificar(this, "Registrar solicitante"); }
     }
 
     public void desplegar(boolean estado) {
-        vista.setVisible(estado);
+        if(estado)  { vista.setVisible(estado); }
+        else        { vista.dispose(); }
     }
     
 }

@@ -4,6 +4,8 @@
  */
 package aplicacion;
 
+import gestor.MensajeroGestor;
+import gestor.SolicitanteGestor;
 import presentacion.*;
 
 /**
@@ -12,24 +14,41 @@ import presentacion.*;
  */
 public class MediadorAplicacion implements Aplicacion {
     
-    private InicioSesion inicio_sesion;
-    private RegistroMensajero registro_mensajero;
+    //Los oyentes para las vistas
+    private InicioSesion inicioSesion;
+    private RegistroMensajero registroMensajero;
+    private RegistroSolicitante registroSolicitante;
     
-    private VistaRegistroMensajero vista_registro_mensajero;
-    private VistaInicioSesion vista_inicio_sesion;
+    //Las vistas
+    private VistaInicioSesion vistaInicioSesion;
+    private VistaRegistroMensajero vistaRegistroMensajero;
+    private VistaRegistroSolicitante vistaRegistroSolicitante;
+    
+    //Gestores
+    private MensajeroGestor gestorMensajero;
+    private SolicitanteGestor gestorSolicitante;
     
     public MediadorAplicacion() {
-        vista_inicio_sesion = new VistaInicioSesion();
-        vista_registro_mensajero = new VistaRegistroMensajero();
+        //Instancias de las vistas
+        vistaInicioSesion = new VistaInicioSesion();
+        vistaRegistroMensajero = new VistaRegistroMensajero();
+        vistaRegistroSolicitante = new VistaRegistroSolicitante();
         
-        inicio_sesion = new InicioSesion(vista_inicio_sesion, this);
-        registro_mensajero = new RegistroMensajero(vista_registro_mensajero, this);
+        //Instancias de los gestores
+        gestorMensajero = new MensajeroGestor();
+        gestorSolicitante = new SolicitanteGestor();
+        
+        
+        //Instancias de los oyentes
+        inicioSesion = new InicioSesion(vistaInicioSesion, this);
+        registroMensajero = new RegistroMensajero(vistaRegistroMensajero, gestorMensajero, this);
+        registroSolicitante = new RegistroSolicitante(vistaRegistroSolicitante, gestorSolicitante, this);
         
         iniciar();
     } 
     
     public void iniciar() {
-        inicio_sesion.desplegar(true);
+        inicioSesion.desplegar(true);
     }
     
     
@@ -38,8 +57,12 @@ public class MediadorAplicacion implements Aplicacion {
         if(aplicacion instanceof InicioSesion) {
             switch(mensaje) {
                 case "Registrar mensajero":
-                    inicio_sesion.desplegar(false);
-                    registro_mensajero.desplegar(true);
+                    inicioSesion.desplegar(false);
+                    registroMensajero.desplegar(true);
+                    break;
+                case "Registrar solicitante":
+                    inicioSesion.desplegar(false);
+                    registroSolicitante.desplegar(true);
                     break;
                 default:
                     break;

@@ -26,21 +26,21 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inicioSolicitante = new javax.swing.JButton();
-        inicioMensajero = new javax.swing.JButton();
-        registroSolicitante = new javax.swing.JButton();
-        registroMensajero = new javax.swing.JButton();
+        btnInicioSolicitante = new javax.swing.JButton();
+        btnInicioMensajero = new javax.swing.JButton();
+        btnRegistroSolicitante = new javax.swing.JButton();
+        btnRegistroMensajero = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        inicioSolicitante.setText("Inicio como solicitante");
+        btnInicioSolicitante.setText("Inicio como solicitante");
 
-        inicioMensajero.setText("Inicio como mensajero");
+        btnInicioMensajero.setText("Inicio como mensajero");
 
-        registroSolicitante.setText("Registro de solicitante");
+        btnRegistroSolicitante.setText("Registro de solicitante");
 
-        registroMensajero.setText("Registro de mensajero");
+        btnRegistroMensajero.setText("Registro de mensajero");
 
         jLabel1.setText("Mensajería urbana");
 
@@ -51,10 +51,10 @@ public class VistaInicioSesion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inicioSolicitante, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .addComponent(inicioMensajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(registroSolicitante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(registroMensajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnInicioSolicitante, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                    .addComponent(btnInicioMensajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistroSolicitante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistroMensajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(98, Short.MAX_VALUE)
@@ -67,13 +67,13 @@ public class VistaInicioSesion extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inicioSolicitante)
+                .addComponent(btnInicioSolicitante)
                 .addGap(18, 18, 18)
-                .addComponent(inicioMensajero)
+                .addComponent(btnInicioMensajero)
                 .addGap(18, 18, 18)
-                .addComponent(registroSolicitante)
+                .addComponent(btnRegistroSolicitante)
                 .addGap(18, 18, 18)
-                .addComponent(registroMensajero)
+                .addComponent(btnRegistroMensajero)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -116,10 +116,10 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton inicioMensajero;
-    public javax.swing.JButton inicioSolicitante;
+    public javax.swing.JButton btnInicioMensajero;
+    public javax.swing.JButton btnInicioSolicitante;
+    public javax.swing.JButton btnRegistroMensajero;
+    public javax.swing.JButton btnRegistroSolicitante;
     private javax.swing.JLabel jLabel1;
-    public javax.swing.JButton registroMensajero;
-    public javax.swing.JButton registroSolicitante;
     // End of variables declaration//GEN-END:variables
 }

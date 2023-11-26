@@ -26,10 +26,10 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="inicioSolicitante" pref="248" max="32767" attributes="0"/>
-                  <Component id="inicioMensajero" max="32767" attributes="0"/>
-                  <Component id="registroSolicitante" max="32767" attributes="0"/>
-                  <Component id="registroMensajero" max="32767" attributes="0"/>
+                  <Component id="btnInicioSolicitante" pref="248" max="32767" attributes="0"/>
+                  <Component id="btnInicioMensajero" max="32767" attributes="0"/>
+                  <Component id="btnRegistroSolicitante" max="32767" attributes="0"/>
+                  <Component id="btnRegistroMensajero" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -46,20 +46,20 @@
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="inicioSolicitante" min="-2" max="-2" attributes="0"/>
+              <Component id="btnInicioSolicitante" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="inicioMensajero" min="-2" max="-2" attributes="0"/>
+              <Component id="btnInicioMensajero" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="registroSolicitante" min="-2" max="-2" attributes="0"/>
+              <Component id="btnRegistroSolicitante" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="registroMensajero" min="-2" max="-2" attributes="0"/>
+              <Component id="btnRegistroMensajero" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="inicioSolicitante">
+    <Component class="javax.swing.JButton" name="btnInicioSolicitante">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inicio como solicitante"/>
       </Properties>
@@ -67,7 +67,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="inicioMensajero">
+    <Component class="javax.swing.JButton" name="btnInicioMensajero">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inicio como mensajero"/>
       </Properties>
@@ -75,7 +75,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="registroSolicitante">
+    <Component class="javax.swing.JButton" name="btnRegistroSolicitante">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registro de solicitante"/>
       </Properties>
@@ -83,7 +83,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="registroMensajero">
+    <Component class="javax.swing.JButton" name="btnRegistroMensajero">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registro de mensajero"/>
       </Properties>
