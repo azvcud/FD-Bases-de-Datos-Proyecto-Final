@@ -10,6 +10,6 @@ import java.awt.event.ActionListener;
  *
  * @author amirz
  */
-public interface MediadorVistas {
+public interface Aplicacion {
     public abstract void notificar(Object aplicacion, String mensaje);
 }

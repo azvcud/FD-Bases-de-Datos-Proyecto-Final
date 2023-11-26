@@ -10,18 +10,20 @@ import presentacion.*;
  *
  * @author amirz
  */
-public class VistasConcretas implements MediadorVistas {
+public class MediadorAplicacion implements Aplicacion {
     
     private InicioSesion inicio_sesion;
+    private RegistroMensajero registro_mensajero;
     
     private VistaRegistroMensajero vista_registro_mensajero;
     private VistaInicioSesion vista_inicio_sesion;
     
-    public VistasConcretas() {
+    public MediadorAplicacion() {
         vista_inicio_sesion = new VistaInicioSesion();
         vista_registro_mensajero = new VistaRegistroMensajero();
         
         inicio_sesion = new InicioSesion(vista_inicio_sesion, this);
+        registro_mensajero = new RegistroMensajero(vista_registro_mensajero, this);
         
         iniciar();
     } 
@@ -37,7 +39,7 @@ public class VistasConcretas implements MediadorVistas {
             switch(mensaje) {
                 case "Registrar mensajero":
                     inicio_sesion.desplegar(false);
-                    vista_registro_mensajero.setVisible(true);
+                    registro_mensajero.desplegar(true);
                     break;
                 default:
                     break;

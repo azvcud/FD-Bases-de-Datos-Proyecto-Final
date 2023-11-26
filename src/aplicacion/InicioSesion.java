@@ -14,19 +14,13 @@ import presentacion.VistaInicioSesion;
  */
 public class InicioSesion implements ActionListener {
     
-    private MediadorVistas mediador;
+    private Aplicacion mediador;
     private VistaInicioSesion vista;
     
     //Pueden modificar el constructor en caso de que necesite uno o más gestores
-    public InicioSesion(VistaInicioSesion vista, MediadorVistas mediador) {
+    public InicioSesion(VistaInicioSesion vista, Aplicacion mediador) {
         this.vista = vista;
         this.mediador = mediador;
-        
-        this.vista.titulo.setText("Mensajería Urbana");
-        this.vista.inicioMensajero.setText("Iniciar como mensajero");
-        this.vista.inicioSolicitante.setText("Iniciar como solicitante");
-        this.vista.registroSolicitante.setText("Registrar nuevo solicitante");
-        this.vista.registroMensajero.setText("Registrar nuevo mensajero");
         
         this.vista.inicioMensajero.addActionListener(this);
         this.vista.inicioSolicitante.addActionListener(this);

@@ -26,31 +26,263 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        tfNumeroDocumento = new javax.swing.JTextField();
+        numeroDocumento = new javax.swing.JLabel();
+        tipoDocumento = new javax.swing.JLabel();
+        cbTipoDocumento = new javax.swing.JComboBox<>();
+        primerNombre = new javax.swing.JLabel();
+        tfPrimerNombre = new javax.swing.JTextField();
+        tfSegundoNombre = new javax.swing.JTextField();
+        segundoNombre = new javax.swing.JLabel();
+        primerApellido = new javax.swing.JLabel();
+        tfPrimerApellido = new javax.swing.JTextField();
+        segundoApellido = new javax.swing.JLabel();
+        tfSegundoApellido = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        cbSexo = new javax.swing.JComboBox<>();
+        telefono = new javax.swing.JLabel();
+        correoElectronico = new javax.swing.JLabel();
+        direccion = new javax.swing.JLabel();
+        nacionalidad = new javax.swing.JLabel();
+        seguridadSocial = new javax.swing.JLabel();
+        medioServicio = new javax.swing.JLabel();
+        medioTransporte = new javax.swing.JLabel();
+        tfTelefono = new javax.swing.JTextField();
+        tfCorreoElectronico = new javax.swing.JTextField();
+        tfDireccion = new javax.swing.JTextField();
+        tfNacionalidad = new javax.swing.JTextField();
+        cbSeguridadSocial = new javax.swing.JComboBox<>();
+        cbMedioServicio = new javax.swing.JComboBox<>();
+        cbMedioTransporte = new javax.swing.JComboBox<>();
+        btnRegistrar = new javax.swing.JButton();
+        registroMensajero = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
+        tfNumeroDocumento.setText("jTextField1");
+        tfNumeroDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNumeroDocumentoActionPerformed(evt);
+            }
+        });
+
+        numeroDocumento.setText("Número de documento");
+
+        tipoDocumento.setText("Tipo de documento");
+
+        cbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        primerNombre.setText("Primer nombre");
+
+        tfPrimerNombre.setText("jTextField1");
+        tfPrimerNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPrimerNombreActionPerformed(evt);
+            }
+        });
+
+        tfSegundoNombre.setText("jTextField2");
+        tfSegundoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSegundoNombreActionPerformed(evt);
+            }
+        });
+
+        segundoNombre.setText("Segundo nombre");
+
+        primerApellido.setText("Primer apellido");
+
+        tfPrimerApellido.setText("jTextField3");
+
+        segundoApellido.setText("Segundo apellido");
+
+        tfSegundoApellido.setText("jTextField4");
+
+        jLabel1.setText("Sexo");
+
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        telefono.setText("Teléfono");
+
+        correoElectronico.setText("Correo Electrónico");
+
+        direccion.setText("Dirección");
+
+        nacionalidad.setText("Nacionalidad");
+
+        seguridadSocial.setText("Seguridad social");
+
+        medioServicio.setText("Medio de servicio");
+
+        medioTransporte.setText("Medio de transporte");
+
+        tfTelefono.setText("jTextField1");
+
+        tfCorreoElectronico.setText("jTextField1");
+        tfCorreoElectronico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCorreoElectronicoActionPerformed(evt);
+            }
+        });
+
+        tfDireccion.setText("jTextField1");
+        tfDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfDireccionActionPerformed(evt);
+            }
+        });
+
+        tfNacionalidad.setText("jTextField1");
+
+        cbSeguridadSocial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cbMedioServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cbMedioTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        registroMensajero.setText("Registro de mensajero");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(jButton1)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(numeroDocumento)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfNumeroDocumento))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tipoDocumento)
+                                    .addComponent(primerNombre)
+                                    .addComponent(segundoNombre)
+                                    .addComponent(primerApellido)
+                                    .addComponent(segundoApellido)
+                                    .addComponent(jLabel1))
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cbTipoDocumento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tfPrimerNombre)
+                                    .addComponent(tfSegundoNombre)
+                                    .addComponent(tfPrimerApellido)
+                                    .addComponent(tfSegundoApellido)
+                                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(telefono)
+                            .addComponent(correoElectronico)
+                            .addComponent(direccion)
+                            .addComponent(nacionalidad)
+                            .addComponent(seguridadSocial)
+                            .addComponent(medioServicio)
+                            .addComponent(medioTransporte))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfTelefono)
+                            .addComponent(tfCorreoElectronico)
+                            .addComponent(tfDireccion)
+                            .addComponent(tfNacionalidad)
+                            .addComponent(cbSeguridadSocial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbMedioServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbMedioTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(btnRegistrar)))
+                .addContainerGap(43, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(registroMensajero)
+                .addGap(254, 254, 254))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(jButton1)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(registroMensajero)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numeroDocumento)
+                    .addComponent(tfNumeroDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(telefono)
+                    .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tipoDocumento)
+                    .addComponent(cbTipoDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(correoElectronico)
+                    .addComponent(tfCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(primerNombre)
+                    .addComponent(tfPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(direccion)
+                    .addComponent(tfDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(segundoNombre)
+                    .addComponent(nacionalidad)
+                    .addComponent(tfNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(primerApellido)
+                    .addComponent(tfPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seguridadSocial)
+                    .addComponent(cbSeguridadSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(segundoApellido)
+                    .addComponent(tfSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(medioServicio)
+                    .addComponent(cbMedioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(medioTransporte)
+                    .addComponent(cbMedioTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(btnRegistrar)
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfNumeroDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNumeroDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNumeroDocumentoActionPerformed
+
+    private void tfPrimerNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPrimerNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPrimerNombreActionPerformed
+
+    private void tfSegundoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSegundoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSegundoNombreActionPerformed
+
+    private void tfCorreoElectronicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCorreoElectronicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCorreoElectronicoActionPerformed
+
+    private void tfDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfDireccionActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,6 +320,35 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JComboBox<String> cbMedioServicio;
+    public javax.swing.JComboBox<String> cbMedioTransporte;
+    public javax.swing.JComboBox<String> cbSeguridadSocial;
+    public javax.swing.JComboBox<String> cbSexo;
+    public javax.swing.JComboBox<String> cbTipoDocumento;
+    private javax.swing.JLabel correoElectronico;
+    private javax.swing.JLabel direccion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel medioServicio;
+    private javax.swing.JLabel medioTransporte;
+    private javax.swing.JLabel nacionalidad;
+    private javax.swing.JLabel numeroDocumento;
+    private javax.swing.JLabel primerApellido;
+    private javax.swing.JLabel primerNombre;
+    private javax.swing.JLabel registroMensajero;
+    private javax.swing.JLabel segundoApellido;
+    private javax.swing.JLabel segundoNombre;
+    private javax.swing.JLabel seguridadSocial;
+    private javax.swing.JLabel telefono;
+    public javax.swing.JTextField tfCorreoElectronico;
+    public javax.swing.JTextField tfDireccion;
+    public javax.swing.JTextField tfNacionalidad;
+    public javax.swing.JTextField tfNumeroDocumento;
+    public javax.swing.JTextField tfPrimerApellido;
+    public javax.swing.JTextField tfPrimerNombre;
+    public javax.swing.JTextField tfSegundoApellido;
+    public javax.swing.JTextField tfSegundoNombre;
+    public javax.swing.JTextField tfTelefono;
+    private javax.swing.JLabel tipoDocumento;
     // End of variables declaration//GEN-END:variables
 }

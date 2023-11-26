@@ -4,8 +4,7 @@
  */
 package presentacion;
 
-import aplicacion.MediadorVistas;
-import aplicacion.VistasConcretas;
+import aplicacion.MediadorAplicacion;
 import gestor.CiudadGestor;
 import gestor.MensajeroGestor;
 import gestor.PagoServicioGestor;
@@ -14,6 +13,7 @@ import gestor.SolicitanteGestor;
 import gestor.TarifaGestor;
 import javax.swing.JOptionPane;
 import util.RHException;
+import aplicacion.Aplicacion;
 
 /**
  * Clase que representa la aplicación principal.
@@ -40,7 +40,7 @@ public class Consola {
         PagoServicioGestor serpagoges;
         serpagoges = new PagoServicioGestor();
         
-        MediadorVistas aplicacion = new VistasConcretas();
+        Aplicacion aplicacion = new MediadorAplicacion();
          
        /*  //Prueba de insersion en Solicitante     
         try { 
