@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos del Pago que debe realizar el solicitante por el Servicio.
  * @author David
  */
 public class PagoServicio {

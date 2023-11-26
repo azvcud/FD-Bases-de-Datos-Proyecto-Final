@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos de la Calificación de un servicio.
  * @author David
  */
 public class Calificacion {

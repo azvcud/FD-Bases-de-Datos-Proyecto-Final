@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- *
+ * Clase que encapsula los datos del Pago a realizar al mensajero.
  * @author David
  */
 public class PagoMensajero {

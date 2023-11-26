@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import aplicacion.MediadorAplicacion;
 import gestor.CiudadGestor;
 import gestor.MensajeroGestor;
 import gestor.PagoServicioGestor;
@@ -12,16 +13,21 @@ import gestor.SolicitanteGestor;
 import gestor.TarifaGestor;
 import javax.swing.JOptionPane;
 import util.RHException;
+import aplicacion.Aplicacion;
 
 /**
- *
+ * Clase que representa la aplicación principal.
  * @author amirz
  */
 public class Consola {
      
-     
+    /**
+     * Metodo principal de la aplicación.
+     * @param args 
+     */
     public  static void main(String[] args) {
         
+        /*
         SolicitanteGestor sg;
         sg = new SolicitanteGestor();
         MensajeroGestor mg;
@@ -34,7 +40,9 @@ public class Consola {
         serg = new ServicioGestor();
         PagoServicioGestor serpagoges;
         serpagoges = new PagoServicioGestor();
+        */
         
+        Aplicacion aplicacion = new MediadorAplicacion();
          
        /*  //Prueba de insersion en Solicitante     
         try { 
@@ -70,7 +78,8 @@ public class Consola {
        
          
         
-          //Prueba de eliminacion en Solicitante     
+          //Prueba de eliminacion en Solicitante  
+      /*
         try { 
               System.out.println("Prueba eliminacion");
               sg.eliminarSolicitante(6301);
@@ -79,7 +88,7 @@ public class Consola {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
           }       
-       
+       */
     
         
        /* //Prueba de insersion en Mensajero    
@@ -113,6 +122,8 @@ public class Consola {
           }   */    
         
         /* //Prueba de insersion en Servicio    
+         //Prueba de insersion en Servicio  
+        /*
         try { 
               System.out.println("PruebaServicio");
               
@@ -124,6 +135,9 @@ public class Consola {
          }    */     
          
         /* //Prueba de insersion en PagoServicio    
+         }         
+        
+         //Prueba de insersion en PagoServicio    
         try { 
               System.out.println("PruebaPagoServicio");
               
@@ -131,13 +145,8 @@ public class Consola {
               JOptionPane.showMessageDialog(null,  "Registro Incluido Exitosamente", null, JOptionPane.INFORMATION_MESSAGE);
           } catch (RHException f) {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
-              
-         }  */
-        
-        
-         
-        
-        
+          }
+         }
       }
 
 }
