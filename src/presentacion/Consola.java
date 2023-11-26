@@ -53,6 +53,43 @@ public class Consola {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
           }          */
+       
+        /*   //Prueba de insersion en Solicitante     
+        try { 
+              System.out.println("Prueba");
+              sg.registrarSolicitante(6301, "CC","Willy", "charles", "javier", "rodriguez", "hombre",123,"casagmaiil.com", "casa" );
+              JOptionPane.showMessageDialog(null,  "Registro Incluido Exitosamente", null, JOptionPane.INFORMATION_MESSAGE);
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
+              
+          }       */  
+       
+        
+         /*
+          //Prueba de modificaion en Solicitante     
+        try { 
+              System.out.println("Prueba modificaion");
+              sg.actualizarDatos(6301, "MAX ", "charles", "javier", "El PEPE", "hombre",123,"casagmaiil.com", "casa" );
+              JOptionPane.showMessageDialog(null,  "Registro Incluido Exitosamente", null, JOptionPane.INFORMATION_MESSAGE);
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
+              
+          }      */    
+       
+         
+        
+          //Prueba de eliminacion en Solicitante  
+      /*
+        try { 
+              System.out.println("Prueba eliminacion");
+              sg.eliminarSolicitante(6301);
+              JOptionPane.showMessageDialog(null,  "Registro Incluido Exitosamente", null, JOptionPane.INFORMATION_MESSAGE);
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
+              
+          }       
+       */
+    
         
        /* //Prueba de insersion en Mensajero    
         try { 
@@ -84,6 +121,7 @@ public class Consola {
               
           }   */    
         
+        /* //Prueba de insersion en Servicio    
          //Prueba de insersion en Servicio  
         /*
         try { 
@@ -94,6 +132,9 @@ public class Consola {
           } catch (RHException f) {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
+         }    */     
+         
+        /* //Prueba de insersion en PagoServicio    
          }         
         
          //Prueba de insersion en PagoServicio    
@@ -104,14 +145,8 @@ public class Consola {
               JOptionPane.showMessageDialog(null,  "Registro Incluido Exitosamente", null, JOptionPane.INFORMATION_MESSAGE);
           } catch (RHException f) {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
-              
+          }
          }
-         */
-         
-        
-        
+        */
       }
-
 }
-      
-
