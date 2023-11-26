@@ -147,8 +147,6 @@ public class Consola {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
           }
          }
+        */
       }
-
 }
-      
-

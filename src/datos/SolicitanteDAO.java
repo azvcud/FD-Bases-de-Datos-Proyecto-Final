@@ -175,6 +175,5 @@ public class SolicitanteDAO {
                  throw new RHException("SolicitanteDAO", "No existe solicitante ");
             }
     } 
- }
-     
- }
+}     
+
