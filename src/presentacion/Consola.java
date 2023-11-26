@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import aplicacion.MediadorAplicacion;
 import gestor.CiudadGestor;
 import gestor.MensajeroGestor;
 import gestor.PagoServicioGestor;
@@ -12,6 +13,7 @@ import gestor.SolicitanteGestor;
 import gestor.TarifaGestor;
 import javax.swing.JOptionPane;
 import util.RHException;
+import aplicacion.Aplicacion;
 
 /**
  * Clase que representa la aplicación principal.
@@ -25,6 +27,7 @@ public class Consola {
      */
     public  static void main(String[] args) {
         
+        /*
         SolicitanteGestor sg;
         sg = new SolicitanteGestor();
         MensajeroGestor mg;
@@ -37,7 +40,9 @@ public class Consola {
         serg = new ServicioGestor();
         PagoServicioGestor serpagoges;
         serpagoges = new PagoServicioGestor();
+        */
         
+        Aplicacion aplicacion = new MediadorAplicacion();
          
        /*  //Prueba de insersion en Solicitante     
         try { 
@@ -79,7 +84,8 @@ public class Consola {
               
           }   */    
         
-         //Prueba de insersion en Servicio    
+         //Prueba de insersion en Servicio  
+        /*
         try { 
               System.out.println("PruebaServicio");
               
@@ -89,7 +95,7 @@ public class Consola {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
          }         
-         
+        
          //Prueba de insersion en PagoServicio    
         try { 
               System.out.println("PruebaPagoServicio");
@@ -99,9 +105,8 @@ public class Consola {
           } catch (RHException f) {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
-         }  
-        
-        
+         }
+         */
          
         
         
