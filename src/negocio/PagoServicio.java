@@ -5,26 +5,28 @@
 package negocio;
 
 /**
- * Clase que encapsula los datos del pago correspondiente a un empleado.
+ * Clase que encapsula los datos del Pago que debe realizar el solicitante por el Servicio.
  * @author David
  */
-public class Pago {
-    private int    k_referenciaPago;
+public class PagoServicio {
+    private String k_referenciaPago;
     private String n_tipoPago;
-    private int q_valor;
+    private int    q_valor;
     private String n_estado;
-    private String k_numeroDeServicio;
+    private int k_numeroDeServicio;
 
-    public Pago() {
+    public PagoServicio() {
     }
 
-    public int getK_referenciaPago() {
+    public String getK_referenciaPago() {
         return k_referenciaPago;
     }
 
-    public void setK_referenciaPago(int k_referenciaPago) {
+    public void setK_referenciaPago(String k_referenciaPago) {
         this.k_referenciaPago = k_referenciaPago;
     }
+
+    
 
     public String getN_tipoPago() {
         return n_tipoPago;
@@ -50,15 +52,14 @@ public class Pago {
         this.n_estado = n_estado;
     }
 
-    public String getK_numeroDeServicio() {
+    public int getK_numeroDeServicio() {
         return k_numeroDeServicio;
     }
 
-    public void setK_numeroDeServicio(String k_numeroDeServicio) {
+    public void setK_numeroDeServicio(int k_numeroDeServicio) {
         this.k_numeroDeServicio = k_numeroDeServicio;
     }
-    
-    
-    
+
+   
     
 }

@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
- * Clase que representa la aplicación principal
+ * Clase que representa la parte de cliente
  * @author Soky
  */
 public class Cliente {
     
     /**
-     * Constructo de la clase Cliente.
+     * Constructor de la clase Cliente.
      * Crea y muestra una ventana centrada al iniciar la aplicaión.
      */
     
@@ -39,6 +39,8 @@ public class Cliente {
      * 
      * @param args 
      */
+
+  /*
     public static void main(String[] args) {
         try {
             //Configuración de la apariencia y comportamiento del sistema
@@ -48,5 +50,5 @@ public class Cliente {
         }
         //Creacion de una instancia cliente que permita iniciar el sismtema
         new Cliente();
+     */
     }
-}
