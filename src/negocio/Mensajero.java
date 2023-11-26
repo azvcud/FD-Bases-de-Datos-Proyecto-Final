@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- * Clase que encapsula los datos del empleado Mensajero
+ * Clase que encapsula los datos del empleado Mensajero.
  * @author David
  */
 public class Mensajero {

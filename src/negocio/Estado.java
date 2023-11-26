@@ -5,7 +5,7 @@
 package negocio;
 
 /**
- * Clase que encapsula los datos del Estado en que se encuentra una actividad
+ * Clase que encapsula los datos del Estado en que se encuentra una actividad.
  * @author David.
  */
 public class Estado {
