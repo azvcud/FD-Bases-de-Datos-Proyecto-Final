@@ -17,6 +17,7 @@ public class InicioSesion implements ActionListener {
     private MediadorVistas mediador;
     private VistaInicioSesion vista;
     
+    //Pueden modificar el constructor en caso de que necesite uno o más gestores
     public InicioSesion(VistaInicioSesion vista, MediadorVistas mediador) {
         this.vista = vista;
         this.mediador = mediador;
