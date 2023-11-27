@@ -7,7 +7,7 @@ package aplicacion;
 import java.awt.event.ActionListener;
 
 /**
- *
+ * Clase que notifica a la clase Mediador Aplicación de los eventos en la vista actual.
  * @author amirz
  */
 public interface Aplicacion {
