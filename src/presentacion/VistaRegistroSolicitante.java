@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Vista que muestra el formulario de registro para un nuevo usuario Solicitante.
  * @author amirz
  */
 public class VistaRegistroSolicitante extends javax.swing.JFrame {

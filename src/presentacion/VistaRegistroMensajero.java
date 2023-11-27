@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Vista que muestra el formulario de registro para un Mensajero nuevo.
  * @author amirz
  */
 public class VistaRegistroMensajero extends javax.swing.JFrame {

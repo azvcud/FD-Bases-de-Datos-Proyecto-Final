@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Clase que contiene la vista relacionada a la información en detalle que ve el Mensajero del Servicio.
  * @author amirz
  */
 public class DetalleServicioMensajero extends javax.swing.JFrame {

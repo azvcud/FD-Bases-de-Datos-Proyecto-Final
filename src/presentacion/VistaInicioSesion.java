@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Vista principal en la que se muestran las opciones para ingresar a la aplicación.
  * @author amirz
  */
 public class VistaInicioSesion extends javax.swing.JFrame {
