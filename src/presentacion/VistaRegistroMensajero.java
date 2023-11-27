@@ -63,7 +63,6 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tfNumeroDocumento.setText("jTextField1");
         tfNumeroDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNumeroDocumentoActionPerformed(evt);
@@ -74,18 +73,21 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         tipoDocumento.setText("Tipo de documento");
 
-        cbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CC", "TI", "RC", "CE" }));
+        cbTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoDocumentoActionPerformed(evt);
+            }
+        });
 
         primerNombre.setText("Primer nombre");
 
-        tfPrimerNombre.setText("jTextField1");
         tfPrimerNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPrimerNombreActionPerformed(evt);
             }
         });
 
-        tfSegundoNombre.setText("jTextField2");
         tfSegundoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSegundoNombreActionPerformed(evt);
@@ -96,15 +98,11 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         primerApellido.setText("Primer apellido");
 
-        tfPrimerApellido.setText("jTextField3");
-
         segundoApellido.setText("Segundo apellido");
-
-        tfSegundoApellido.setText("jTextField4");
 
         jLabel1.setText("Sexo");
 
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino", "No binario" }));
 
         telefono.setText("Teléfono");
 
@@ -120,29 +118,23 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         medioTransporte.setText("Medio de transporte");
 
-        tfTelefono.setText("jTextField1");
-
-        tfCorreoElectronico.setText("jTextField1");
         tfCorreoElectronico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfCorreoElectronicoActionPerformed(evt);
             }
         });
 
-        tfDireccion.setText("jTextField1");
         tfDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDireccionActionPerformed(evt);
             }
         });
 
-        tfNacionalidad.setText("jTextField1");
+        cbSeguridadSocial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
 
-        cbSeguridadSocial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMedioServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Documento", "Factura", "Pequeño", "Mediano", "Grande" }));
 
-        cbMedioServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cbMedioTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMedioTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Motocicleta", "Bicicleta" }));
 
         btnRegistrarMensajero.setText("Registrar");
         btnRegistrarMensajero.addActionListener(new java.awt.event.ActionListener() {
@@ -156,10 +148,6 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
         matricula.setText("Matrícula");
 
         marca.setText("Marca");
-
-        tfMatricula.setText("jTextField1");
-
-        tfMarca.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,7 +165,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(numeroDocumento)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfNumeroDocumento))
+                                .addComponent(tfNumeroDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tipoDocumento)
@@ -324,6 +312,10 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     private void btnRegistrarMensajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarMensajeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarMensajeroActionPerformed
+
+    private void cbTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTipoDocumentoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -9,25 +9,25 @@ package negocio;
  * @author David
  */
 public class Solicitante {
-    private int    k_numeroDocumento;
+    private long   k_numeroDocumento;
     private String k_tipoDocumento;
     private String n_primerNombre;
     private String n_segundoNombre;
     private String n_primerApellido;
     private String n_segundoApellido;
     private String n_sexo;
-    private int    q_telefono;
+    private long   q_telefono;
     private String n_correoElectronico;
     private String n_direccion;
 
     public Solicitante() {
     }
 
-    public int getK_numeroDocumento() {
+    public long getK_numeroDocumento() {
         return k_numeroDocumento;
     }
 
-    public void setK_numeroDocumento(int k_numeroDocumento) {
+    public void setK_numeroDocumento(long k_numeroDocumento) {
         this.k_numeroDocumento = k_numeroDocumento;
     }
 
@@ -79,11 +79,11 @@ public class Solicitante {
         this.n_sexo = n_sexo;
     }
 
-    public int getQ_telefono() {
+    public long getQ_telefono() {
         return q_telefono;
     }
 
-    public void setQ_telefono(int q_telefono) {
+    public void setQ_telefono(long q_telefono) {
         this.q_telefono = q_telefono;
     }
 

@@ -36,7 +36,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="numeroDocumento" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tfNumeroDocumento" max="32767" attributes="0"/>
+                              <Component id="tfNumeroDocumento" pref="129" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -193,9 +193,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="tfNumeroDocumento">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNumeroDocumentoActionPerformed"/>
       </Events>
@@ -217,13 +214,16 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+            <StringItem index="0" value="CC"/>
+            <StringItem index="1" value="TI"/>
+            <StringItem index="2" value="RC"/>
+            <StringItem index="3" value="CE"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbTipoDocumentoActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -235,9 +235,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfPrimerNombre">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPrimerNombreActionPerformed"/>
       </Events>
@@ -246,9 +243,6 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfSegundoNombre">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfSegundoNombreActionPerformed"/>
       </Events>
@@ -267,9 +261,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfPrimerApellido">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -280,9 +271,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfSegundoApellido">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -295,11 +283,10 @@
     <Component class="javax.swing.JComboBox" name="cbSexo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Femenino"/>
+            <StringItem index="1" value="Masculino"/>
+            <StringItem index="2" value="No binario"/>
           </StringArray>
         </Property>
       </Properties>
@@ -344,17 +331,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfTelefono">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfCorreoElectronico">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCorreoElectronicoActionPerformed"/>
       </Events>
@@ -363,9 +344,6 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfDireccion">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfDireccionActionPerformed"/>
       </Events>
@@ -374,9 +352,6 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfNacionalidad">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -384,11 +359,9 @@
     <Component class="javax.swing.JComboBox" name="cbSeguridadSocial">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Si"/>
+            <StringItem index="1" value="No"/>
           </StringArray>
         </Property>
       </Properties>
@@ -400,11 +373,12 @@
     <Component class="javax.swing.JComboBox" name="cbMedioServicio">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Documento"/>
+            <StringItem index="1" value="Factura"/>
+            <StringItem index="2" value="Peque&#xf1;o"/>
+            <StringItem index="3" value="Mediano"/>
+            <StringItem index="4" value="Grande"/>
           </StringArray>
         </Property>
       </Properties>
@@ -416,11 +390,9 @@
     <Component class="javax.swing.JComboBox" name="cbMedioTransporte">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Motocicleta"/>
+            <StringItem index="1" value="Bicicleta"/>
           </StringArray>
         </Property>
       </Properties>
@@ -456,17 +428,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfMatricula">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="tfMarca">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

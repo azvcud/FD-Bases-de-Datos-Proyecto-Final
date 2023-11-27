@@ -51,7 +51,6 @@ public class MediadorAplicacion implements Aplicacion {
         inicioSesion.desplegar(true);
     }
     
-    
     @Override
     public void notificar(Object aplicacion, String mensaje) {
         if(aplicacion instanceof InicioSesion) {
@@ -67,6 +66,24 @@ public class MediadorAplicacion implements Aplicacion {
                 default:
                     break;
             }
+        }else if(aplicacion instanceof RegistroMensajero){
+            switch(mensaje) {
+                case "Regresar a inicio":
+                    registroMensajero.desplegar(false);
+                    inicioSesion.desplegar(true);
+                    break;
+                default:
+                    break;
+            }
+        }else if(aplicacion instanceof RegistroSolicitante){
+            switch(mensaje) {
+                case "Regresar a inicio":
+                    registroSolicitante.desplegar(false);
+                    inicioSesion.desplegar(true);
+                    break;
+                default:
+                    break;
+            }
         }
-    }
+    } 
 }

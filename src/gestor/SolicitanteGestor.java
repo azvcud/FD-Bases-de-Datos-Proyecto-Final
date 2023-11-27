@@ -44,8 +44,8 @@ public class SolicitanteGestor {
      * @throws RHException          Excepción en caso de ocurrir un error al insertar un Solicitante en la base de datos.
      */
     
-     public void registrarSolicitante(int k_numeroDocumento,String k_tipodocumento, String n_primerNombre, String n_segundonombre,
-             String n_primerapellido, String n_segundoapellido, String n_sexo,int q_telefono, String n_correoelectronico, String n_direccion) throws RHException {
+     public void registrarSolicitante(long k_numeroDocumento,String k_tipodocumento, String n_primerNombre, String n_segundonombre,
+             String n_primerapellido, String n_segundoapellido, String n_sexo,long q_telefono, String n_correoelectronico, String n_direccion) throws RHException {
       // Crea un objeto Solicitante con los datos proporcionados
       solicitante = new Solicitante();
       
