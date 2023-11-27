@@ -60,10 +60,11 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
         marca = new javax.swing.JLabel();
         tfMatricula = new javax.swing.JTextField();
         tfMarca = new javax.swing.JTextField();
+        CancelarRM = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        tfNumeroDocumento.setText("jTextField1");
         tfNumeroDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNumeroDocumentoActionPerformed(evt);
@@ -75,17 +76,20 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
         tipoDocumento.setText("Tipo de documento");
 
         cbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoDocumentoActionPerformed(evt);
+            }
+        });
 
         primerNombre.setText("Primer nombre");
 
-        tfPrimerNombre.setText("jTextField1");
         tfPrimerNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPrimerNombreActionPerformed(evt);
             }
         });
 
-        tfSegundoNombre.setText("jTextField2");
         tfSegundoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSegundoNombreActionPerformed(evt);
@@ -96,11 +100,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         primerApellido.setText("Primer apellido");
 
-        tfPrimerApellido.setText("jTextField3");
-
         segundoApellido.setText("Segundo apellido");
-
-        tfSegundoApellido.setText("jTextField4");
 
         jLabel1.setText("Sexo");
 
@@ -120,23 +120,17 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         medioTransporte.setText("Medio de transporte");
 
-        tfTelefono.setText("jTextField1");
-
-        tfCorreoElectronico.setText("jTextField1");
         tfCorreoElectronico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfCorreoElectronicoActionPerformed(evt);
             }
         });
 
-        tfDireccion.setText("jTextField1");
         tfDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDireccionActionPerformed(evt);
             }
         });
-
-        tfNacionalidad.setText("jTextField1");
 
         cbSeguridadSocial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -157,9 +151,12 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         marca.setText("Marca");
 
-        tfMatricula.setText("jTextField1");
-
-        tfMarca.setText("jTextField1");
+        CancelarRM.setText("Cancelar");
+        CancelarRM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarRMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,7 +190,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                                     .addComponent(tfSegundoNombre)
                                     .addComponent(tfPrimerApellido)
                                     .addComponent(tfSegundoApellido)
-                                    .addComponent(cbSexo, 0, 129, Short.MAX_VALUE)
+                                    .addComponent(cbSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(tfTelefono))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,12 +206,14 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(telefono)
-                                .addGap(276, 276, 276)
+                                .addGap(281, 281, 281)
                                 .addComponent(marca))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(252, 252, 252)
-                                .addComponent(btnRegistrarMensajero)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CancelarRM)
+                                    .addComponent(btnRegistrarMensajero))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tfCorreoElectronico)
                     .addComponent(tfDireccion)
@@ -293,9 +292,11 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                     .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(marca)
                     .addComponent(tfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(btnRegistrarMensajero)
-                .addGap(25, 25, 25))
+                .addGap(18, 18, 18)
+                .addComponent(CancelarRM)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -324,6 +325,14 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     private void btnRegistrarMensajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarMensajeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarMensajeroActionPerformed
+
+    private void cbTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTipoDocumentoActionPerformed
+
+    private void CancelarRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarRMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CancelarRMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,6 +370,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CancelarRM;
     public javax.swing.JButton btnRegistrarMensajero;
     public javax.swing.JComboBox<String> cbMedioServicio;
     public javax.swing.JComboBox<String> cbMedioTransporte;
