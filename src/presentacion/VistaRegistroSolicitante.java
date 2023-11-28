@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Vista que muestra el formulario de registro para un nuevo usuario Solicitante.
  * @author amirz
  */
 public class VistaRegistroSolicitante extends javax.swing.JFrame {
@@ -26,6 +26,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         registroSolicitante = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         tfNumeroDocumento = new javax.swing.JTextField();
@@ -48,6 +49,9 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
         direccion = new javax.swing.JLabel();
         tfDireccion = new javax.swing.JTextField();
         btnRegistrarSolicitante = new javax.swing.JButton();
+        CancelarRS = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,19 +59,12 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
 
         jLabel1.setText("Número de documento");
 
-        tfNumeroDocumento.setText("jTextField1");
-
         tipoDocumento.setText("Tipo de documento");
-
-        tfTipoDocumento.setText("jTextField1");
 
         jLabel3.setText("Primer nombre");
 
-        tfPrimerNombre.setText("jTextField1");
-
         segundoNombre.setText("Segundo nombre");
 
-        tfSegundoNombre.setText("jTextField1");
         tfSegundoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSegundoNombreActionPerformed(evt);
@@ -76,11 +73,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
 
         primerApellido.setText("Primer Apellido");
 
-        tfPrimerApellido.setText("jTextField1");
-
         segundoApellido.setText("Segundo apellido");
-
-        tfSegundoApellido.setText("jTextField1");
 
         sexo.setText("Sexo");
 
@@ -88,15 +81,9 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
 
         telefono.setText("Teléfono");
 
-        tfTelefono.setText("jTextField1");
-
         correoElectronico.setText("Correo Electrónico");
 
-        tfCorreoElectronico.setText("jTextField1");
-
         direccion.setText("Dirección");
-
-        tfDireccion.setText("jTextField1");
 
         btnRegistrarSolicitante.setText("Registrar");
         btnRegistrarSolicitante.addActionListener(new java.awt.event.ActionListener() {
@@ -105,55 +92,60 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
             }
         });
 
+        CancelarRS.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(tipoDocumento)
-                    .addComponent(jLabel3)
-                    .addComponent(segundoNombre)
-                    .addComponent(primerApellido))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tfNumeroDocumento)
-                    .addComponent(tfTipoDocumento)
-                    .addComponent(tfPrimerNombre)
-                    .addComponent(tfSegundoNombre)
-                    .addComponent(tfPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(correoElectronico)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(segundoApellido)
-                                .addComponent(sexo)
-                                .addComponent(telefono))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(37, 37, 37)
-                                    .addComponent(tfSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfDireccion)
-                                        .addComponent(tfCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                                        .addComponent(tfTelefono))))))
-                    .addComponent(direccion))
-                .addContainerGap(62, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnRegistrarSolicitante)
-                .addGap(295, 295, 295))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(registroSolicitante)
                 .addGap(271, 271, 271))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(tipoDocumento)
+                            .addComponent(jLabel3)
+                            .addComponent(segundoNombre)
+                            .addComponent(primerApellido))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfNumeroDocumento)
+                            .addComponent(tfTipoDocumento)
+                            .addComponent(tfPrimerNombre)
+                            .addComponent(tfSegundoNombre)
+                            .addComponent(tfPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(correoElectronico)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(segundoApellido)
+                                        .addComponent(sexo)
+                                        .addComponent(telefono))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(37, 37, 37)
+                                            .addComponent(tfSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(tfDireccion)
+                                                .addComponent(tfCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                                                .addComponent(tfTelefono))))))
+                            .addComponent(direccion)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CancelarRS)
+                            .addComponent(btnRegistrarSolicitante))))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,9 +182,11 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
                     .addComponent(tfPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(direccion)
                     .addComponent(tfDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
                 .addComponent(btnRegistrarSolicitante)
-                .addGap(25, 25, 25))
+                .addGap(18, 18, 18)
+                .addComponent(CancelarRS)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -242,10 +236,12 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CancelarRS;
     public javax.swing.JButton btnRegistrarSolicitante;
     public javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JLabel correoElectronico;
     private javax.swing.JLabel direccion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel primerApellido;

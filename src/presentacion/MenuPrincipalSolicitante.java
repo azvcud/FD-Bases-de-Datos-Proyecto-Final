@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Clase que contiene la vista relacionada al menu principal que es mostrada al Solicitante del Servicio al abrir la Aplicación.
  * @author amirz
  */
 public class MenuPrincipalSolicitante extends javax.swing.JFrame {
