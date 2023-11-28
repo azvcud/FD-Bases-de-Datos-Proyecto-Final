@@ -11,7 +11,7 @@ import java.util.Date;
 import javax.swing.JFormattedTextField;
 
 /**
- *
+ * Vista que muestrar el formulario para el registro de un nuevo Servicio solicitado por un Solicitante.
  * @author amirz
  */
 public class VistaRegistroServicio extends javax.swing.JFrame {
