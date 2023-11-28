@@ -39,8 +39,6 @@ public class RegistroServicio implements ActionListener{
         if (e.getSource() == vista.btRegistrarServicio){
             int k_numeroDeServicio = Integer.parseInt(vista.txNumeroServicio.getText());
             String n_tipoDeServicio = ((String)vista.cbTipoServicio.getSelectedItem());
-            String f_horaDeInicio = vista.txHoraServicio.getText();
-            String f_fecha = vista.txFechaServicio.getText();
             int q_cantidadDeTrayectos = Integer.parseInt(vista.txCantidadTrayectos.getText());
             int k_idCiudad = 0;
             
@@ -57,7 +55,7 @@ public class RegistroServicio implements ActionListener{
             String k_tipoDocumentoS = ((String)vista.cbTipoIdSolicitante.getSelectedItem());
             
             try {
-                gestorServicio.registrarServicio(k_numeroDeServicio, n_tipoDeServicio, f_horaDeInicio, f_fecha, q_cantidadDeTrayectos, k_idCiudad, k_numeroDocumentoS, k_tipoDocumentoS);
+                gestorServicio.registrarServicio(k_numeroDeServicio, n_tipoDeServicio, q_cantidadDeTrayectos, k_idCiudad, k_numeroDocumentoS, k_tipoDocumentoS);
             } catch (RHException ex) {
                 Logger.getLogger(RegistroServicio.class.getName()).log(Level.SEVERE, null, ex);
             }

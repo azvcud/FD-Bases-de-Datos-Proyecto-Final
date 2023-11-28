@@ -58,7 +58,7 @@ public class InicioSesion implements ActionListener {
         if (e.getSource() == vista.btnRegistroMensajero) { mediador.notificar(this, "Registrar mensajero"); }
         if (e.getSource() == vista.btnRegistroSolicitante) { mediador.notificar(this, "Registrar solicitante"); }
         if (e.getSource() == vista.btnInicioMensajero) { /*JOption 1*/ } 
-        if (e.getSource() == vista.btnInicioSolicitante) { /*JOption 2*/ } 
+        if (e.getSource() == vista.btnInicioSolicitante) { mediador.notificar(this, "Registrar servicio");} 
     }
 
     /**

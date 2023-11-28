@@ -5,6 +5,7 @@
 package aplicacion;
 
 import gestor.MensajeroGestor;
+import gestor.ServicioGestor;
 import gestor.SolicitanteGestor;
 import presentacion.*;
 
@@ -19,15 +20,18 @@ public class MediadorAplicacion implements Aplicacion {
     private InicioSesion inicioSesion;
     private RegistroMensajero registroMensajero;
     private RegistroSolicitante registroSolicitante;
+    private RegistroServicio registroServicio; //Oyente de vista RegServicios
     
     //Las vistas
     private VistaInicioSesion vistaInicioSesion;
     private VistaRegistroMensajero vistaRegistroMensajero;
     private VistaRegistroSolicitante vistaRegistroSolicitante;
+    private VistaRegistroServicio vistaRegistroServicio; //Vista para registro de servicios
     
     //Gestores
     private MensajeroGestor gestorMensajero;
     private SolicitanteGestor gestorSolicitante;
+    private ServicioGestor gestorServicio; //Gestor de servicios
     
     /**
      * Construtor de la clase MediadorAplicación
@@ -38,16 +42,19 @@ public class MediadorAplicacion implements Aplicacion {
         vistaInicioSesion = new VistaInicioSesion();
         vistaRegistroMensajero = new VistaRegistroMensajero();
         vistaRegistroSolicitante = new VistaRegistroSolicitante();
+        vistaRegistroServicio = new VistaRegistroServicio();
         
         //Instancias de los gestores
         gestorMensajero = new MensajeroGestor();
         gestorSolicitante = new SolicitanteGestor();
+        gestorServicio = new ServicioGestor();
         
         
         //Instancias de los oyentes
         inicioSesion = new InicioSesion(vistaInicioSesion, gestorSolicitante, gestorMensajero, this);
         registroMensajero = new RegistroMensajero(vistaRegistroMensajero, gestorMensajero, this);
         registroSolicitante = new RegistroSolicitante(vistaRegistroSolicitante, gestorSolicitante, this);
+        registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, this);  
         
         iniciar();
     } 
@@ -76,6 +83,11 @@ public class MediadorAplicacion implements Aplicacion {
                     inicioSesion.desplegar(false);
                     registroSolicitante.desplegar(true);
                     break;
+                    
+                // Caso para acceder a registro de servicios
+                case "Registrar servicio":
+                    inicioSesion.desplegar(false);
+                    registroServicio.desplegar(true);
                 default:
                     break;
             }
