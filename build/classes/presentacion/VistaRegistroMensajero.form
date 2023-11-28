@@ -39,7 +39,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="numeroDocumento" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tfNumeroDocumento" max="32767" attributes="0"/>
+                              <Component id="tfNumeroDocumento" pref="129" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -222,10 +222,10 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+            <StringItem index="0" value="CC"/>
+            <StringItem index="1" value="TI"/>
+            <StringItem index="2" value="RC"/>
+            <StringItem index="3" value="CE"/>
           </StringArray>
         </Property>
       </Properties>
@@ -291,11 +291,10 @@
     <Component class="javax.swing.JComboBox" name="cbSexo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Femenino"/>
+            <StringItem index="1" value="Masculino"/>
+            <StringItem index="2" value="No binario"/>
           </StringArray>
         </Property>
       </Properties>
@@ -368,11 +367,9 @@
     <Component class="javax.swing.JComboBox" name="cbSeguridadSocial">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Si"/>
+            <StringItem index="1" value="No"/>
           </StringArray>
         </Property>
       </Properties>
@@ -384,11 +381,12 @@
     <Component class="javax.swing.JComboBox" name="cbMedioServicio">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Documento"/>
+            <StringItem index="1" value="Factura"/>
+            <StringItem index="2" value="Peque&#xf1;o"/>
+            <StringItem index="3" value="Mediano"/>
+            <StringItem index="4" value="Grande"/>
           </StringArray>
         </Property>
       </Properties>
@@ -400,11 +398,9 @@
     <Component class="javax.swing.JComboBox" name="cbMedioTransporte">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Motocicleta"/>
+            <StringItem index="1" value="Bicicleta"/>
           </StringArray>
         </Property>
       </Properties>

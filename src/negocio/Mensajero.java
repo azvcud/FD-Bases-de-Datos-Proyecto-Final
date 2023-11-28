@@ -9,33 +9,31 @@ package negocio;
  * @author David
  */
 public class Mensajero {
-    private int    k_numeroDocumento;
+    private long   k_numeroDocumento;
     private String k_tipoDocumento;
     private String n_primerNombre;
     private String n_segundoNombre;
     private String n_primerApellido;
     private String n_segundoApellido;
     private String n_sexo;
-    private int    q_telefono;
+    private long   q_telefono;
     private String n_correoElectronico;
     private String n_direccion;
     private String n_nacionalidad;
-    private int    q_seguridadSocial;
+    private boolean q_seguridadSocial;
     private String m_medioDeServicio;
     private String m_medioDeTransporte;
     private String m_matricula;
     private String m_marca;
-    private double v_pago;
-    private double v_calificacion;
 
     public Mensajero() {
     }
 
-    public int getK_numeroDocumento() {
+    public long getK_numeroDocumento() {
         return k_numeroDocumento;
     }
 
-    public void setK_numeroDocumento(int k_numeroDocumento) {
+    public void setK_numeroDocumento(long  k_numeroDocumento) {
         this.k_numeroDocumento = k_numeroDocumento;
     }
 
@@ -87,11 +85,11 @@ public class Mensajero {
         this.n_sexo = n_sexo;
     }
 
-    public int getQ_telefono() {
+    public long getQ_telefono() {
         return q_telefono;
     }
 
-    public void setQ_telefono(int q_telefono) {
+    public void setQ_telefono(long q_telefono) {
         this.q_telefono = q_telefono;
     }
 
@@ -119,11 +117,11 @@ public class Mensajero {
         this.n_nacionalidad = n_nacionalidad;
     }
 
-    public int getQ_seguridadSocial() {
+    public boolean getQ_seguridadSocial() {
         return q_seguridadSocial;
     }
 
-    public void setQ_seguridadSocial(int q_seguridadSocial) {
+    public void setQ_seguridadSocial(boolean q_seguridadSocial) {
         this.q_seguridadSocial = q_seguridadSocial;
     }
 
@@ -158,24 +156,5 @@ public class Mensajero {
     public void setM_marca(String m_marca) {
         this.m_marca = m_marca;
     }
-
-    public double getV_pago() {
-        return v_pago;
-    }
-
-    public void setV_pago(double v_pago) {
-        this.v_pago = v_pago;
-    }
-
-    public double getV_calificacion() {
-        return v_calificacion;
-    }
-
-    public void setV_calificacion(double v_calificacion) {
-        this.v_calificacion = v_calificacion;
-    }
-
-   
-    
     
 }

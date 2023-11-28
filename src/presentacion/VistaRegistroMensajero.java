@@ -75,7 +75,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         tipoDocumento.setText("Tipo de documento");
 
-        cbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CC", "TI", "RC", "CE" }));
         cbTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbTipoDocumentoActionPerformed(evt);
@@ -104,7 +104,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         jLabel1.setText("Sexo");
 
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino", "No binario" }));
 
         telefono.setText("Teléfono");
 
@@ -132,11 +132,11 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
             }
         });
 
-        cbSeguridadSocial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbSeguridadSocial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
 
-        cbMedioServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMedioServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Documento", "Factura", "Pequeño", "Mediano", "Grande" }));
 
-        cbMedioTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMedioTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Motocicleta", "Bicicleta" }));
 
         btnRegistrarMensajero.setText("Registrar");
         btnRegistrarMensajero.addActionListener(new java.awt.event.ActionListener() {
@@ -152,11 +152,6 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
         marca.setText("Marca");
 
         CancelarRM.setText("Cancelar");
-        CancelarRM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarRMActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,7 +169,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(numeroDocumento)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfNumeroDocumento))
+                                .addComponent(tfNumeroDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tipoDocumento)
@@ -329,10 +324,6 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     private void cbTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoDocumentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbTipoDocumentoActionPerformed
-
-    private void CancelarRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarRMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CancelarRMActionPerformed
 
     /**
      * @param args the command line arguments

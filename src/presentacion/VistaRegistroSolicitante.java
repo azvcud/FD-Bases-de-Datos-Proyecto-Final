@@ -61,10 +61,17 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
 
         tipoDocumento.setText("Tipo de documento");
 
+        tfTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTipoDocumentoActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Primer nombre");
 
         segundoNombre.setText("Segundo nombre");
 
+        tfSegundoNombre.setToolTipText("");
         tfSegundoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSegundoNombreActionPerformed(evt);
@@ -75,13 +82,36 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
 
         segundoApellido.setText("Segundo apellido");
 
+        tfSegundoApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSegundoApellidoActionPerformed(evt);
+            }
+        });
+
         sexo.setText("Sexo");
 
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino", "No binario" }));
+        cbSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSexoActionPerformed(evt);
+            }
+        });
 
         telefono.setText("Teléfono");
 
+        tfTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTelefonoActionPerformed(evt);
+            }
+        });
+
         correoElectronico.setText("Correo Electrónico");
+
+        tfCorreoElectronico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCorreoElectronicoActionPerformed(evt);
+            }
+        });
 
         direccion.setText("Dirección");
 
@@ -199,6 +229,26 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
     private void btnRegistrarSolicitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarSolicitanteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarSolicitanteActionPerformed
+
+    private void cbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSexoActionPerformed
+
+    private void tfTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTipoDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTipoDocumentoActionPerformed
+
+    private void tfSegundoApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSegundoApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSegundoApellidoActionPerformed
+
+    private void tfTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTelefonoActionPerformed
+
+    private void tfCorreoElectronicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCorreoElectronicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCorreoElectronicoActionPerformed
 
     /**
      * @param args the command line arguments
