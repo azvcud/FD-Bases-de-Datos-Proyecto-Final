@@ -85,7 +85,7 @@ public class MensajeroDAO {
                     + "n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico,n_direccion,"
                     + "n_nacionalidad, q_seguridadsocial, n_mediodeservicio, n_mediodetransporte,"
                     + "n_matricula, n_marca, v_pago, v_calificacion"
-                    + " FROM solicitante WHERE k_numeroDocumento = ?";
+                    + " FROM mensajero WHERE k_numeroDocumento = ?";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setInt(1, k_numeroDocumento);

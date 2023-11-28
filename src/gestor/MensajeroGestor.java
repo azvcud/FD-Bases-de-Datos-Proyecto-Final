@@ -8,6 +8,7 @@ import datos.MensajeroDAO;
 import java.util.HashSet;
 import java.util.Set;
 import negocio.Mensajero;
+import negocio.Solicitante;
 import util.RHException;
 
 
@@ -83,8 +84,16 @@ public class MensajeroGestor {
       // Registra al Mensajero en la base de datos usando al objeto MensajeroDAO
       mensajeroDAO.registrarMensajero(mensajero);
     }
+     
+     
+    public Mensajero buscarmensajero(int k_numeroDocumento)throws RHException{
+        Mensajero mensajero;
+        mensajero =mensajeroDAO.buscarMensajero(k_numeroDocumento);
+        return mensajero;
+    } 
+       
 
-    // Getters y setters para acceder y modificar MensajeroDAP y Mensajero
+    // Getters y setters para acceder y modificar MensajeroDAO y Mensajero
    
     public MensajeroDAO getMensajeroDAO() {
         return mensajeroDAO;

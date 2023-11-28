@@ -4,19 +4,33 @@
  */
 package presentacion;
 
+import gestor.MensajeroGestor;
+import gestor.SolicitanteGestor;
+import javax.swing.JOptionPane;
+import negocio.Mensajero;
+import negocio.Solicitante;
+import util.RHException;
+
 /**
  *
  * @author amirz
  */
 public class VistaInicioSesion extends javax.swing.JFrame {
-
+    
+     SolicitanteGestor sg;
+     Solicitante solicitante;
+     MensajeroGestor mg;
+     Mensajero mensajero;
+     
     /**
      * Creates new form VistaInicioSesion
      */
     public VistaInicioSesion() {
         initComponents();
+        sg = new SolicitanteGestor();
+        mg = new MensajeroGestor();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,8 +49,18 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnInicioSolicitante.setText("Inicio como solicitante");
+        btnInicioSolicitante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioSolicitanteActionPerformed(evt);
+            }
+        });
 
         btnInicioMensajero.setText("Inicio como mensajero");
+        btnInicioMensajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioMensajeroActionPerformed(evt);
+            }
+        });
 
         btnRegistroSolicitante.setText("Registro de solicitante");
 
@@ -57,7 +81,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
                     .addComponent(btnRegistroMensajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(82, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(96, 96, 96))
         );
@@ -79,6 +103,58 @@ public class VistaInicioSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInicioMensajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioMensajeroActionPerformed
+        // Muestra un cuadro de diálogo de entrada de texto
+        String textoIngresado = JOptionPane.showInputDialog("Inserte su id:");
+        
+        mensajero = new Mensajero();
+        
+        try { 
+              System.out.println("Prueba");
+              mensajero=mg.buscarmensajero(Integer.parseInt(textoIngresado));
+              
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
+              
+        }  
+
+        
+        // Verifica el id del usuario
+        if (solicitante != null) {
+            // Poner acá lo que pasa cuando el usuario existe
+            JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso " + textoIngresado);
+        } else {
+            // Lo que pasa cuando el usuario no existe
+            JOptionPane.showMessageDialog(null, "ERROR: Usuario no existe");
+        }
+    }//GEN-LAST:event_btnInicioMensajeroActionPerformed
+
+    private void btnInicioSolicitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSolicitanteActionPerformed
+        // Muestra un cuadro de diálogo de entrada de texto
+        String textoIngresado = JOptionPane.showInputDialog("Inserte su id:");
+        
+        solicitante = new Solicitante();
+        
+        try { 
+              System.out.println("Prueba");
+              solicitante=sg.buscarSolicitante(Integer.parseInt(textoIngresado));
+              
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
+              
+        }  
+
+        
+        // Verifica el id del usuario
+        if (solicitante != null) {
+            // Poner acá lo que pasa cuando el usuario existe
+            JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso " + textoIngresado);
+        } else {
+            // Lo que pasa cuando el usuario no existe
+            JOptionPane.showMessageDialog(null, "ERROR: Usuario no existe");
+        }
+    }//GEN-LAST:event_btnInicioSolicitanteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,4 +198,6 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistroSolicitante;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-}
+
+
+}  

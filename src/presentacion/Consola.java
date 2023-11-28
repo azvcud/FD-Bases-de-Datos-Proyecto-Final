@@ -123,7 +123,7 @@ public class Consola {
         
         /* //Prueba de insersion en Servicio    
          //Prueba de insersion en Servicio  
-        /*
+        
         try { 
               System.out.println("PruebaServicio");
               
@@ -134,8 +134,8 @@ public class Consola {
               
          }    */     
          
-        /* //Prueba de insersion en PagoServicio    
-         }         
+        //Prueba de insersion en PagoServicio    
+         /*        
         
          //Prueba de insersion en PagoServicio    
         try { 
@@ -147,8 +147,7 @@ public class Consola {
               JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
           }
          }
-      }
-
-}
+      } */
+    }
       
-
+}

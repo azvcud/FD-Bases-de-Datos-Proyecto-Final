@@ -65,6 +65,12 @@ public class SolicitanteGestor {
       solicitanteDAO.registrarSolicitante(solicitante);
     }
      
+    public Solicitante buscarSolicitante(int k_numeroDocumento)throws RHException{
+        Solicitante solicitante;
+        solicitante =solicitanteDAO.buscarSolicitante(k_numeroDocumento);
+        return solicitante;
+    } 
+     
      
     public void actualizarDatos(int k_numeroDocumento, String n_primerNombre, String n_segundonombre,
              String n_primerapellido, String n_segundoapellido, String n_sexo,int q_telefono, String n_correoelectronico, String n_direccion) throws RHException {
