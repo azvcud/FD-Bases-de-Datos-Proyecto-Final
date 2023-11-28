@@ -33,8 +33,8 @@ public class ServicioDAO {
     public void registrarServicio(Servicio servicio) throws RHException {
       try {
         //Prepara la insercion de un nuevo Servicio en la base de datos      
-        String strSQL = "INSERT INTO servicio (k_numeroDeServicio, n_tipoDeServicio, f_horaDeInicio, f_fecha, q_calificacion, "
-                + " q_cantidadDeTrayectos, k_numeroDocumentoM, k_tipoDocumentoM, k_idCiudad,k_numeroDocumentoS, k_tipoDocumentoS ) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String strSQL = "INSERT INTO servicio (k_numeroDeServicio, n_tipoDeServicio, f_horaDeInicio, f_fecha,"
+                + " q_cantidadDeTrayectos, k_idCiudad,k_numeroDocumentoS, k_tipoDocumentoS ) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         Connection conexion = ServiceLocator.getInstance().tomarConexion();
         PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
         // Establece los parametros para insertar el Servicio

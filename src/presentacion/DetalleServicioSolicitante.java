@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Clase que contiene la vista relacionada a la información en detalle que ve el Solicitante del Servicio.
  * @author amirz
  */
 public class DetalleServicioSolicitante extends javax.swing.JFrame {

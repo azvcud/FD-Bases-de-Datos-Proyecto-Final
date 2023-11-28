@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Clase que contiene la vista relacionada al menu principal que es mostrada al Mensajero al abrir la Aplicación.
  * @author amirz
  */
 public class MenuPrincipalMensajero extends javax.swing.JFrame {

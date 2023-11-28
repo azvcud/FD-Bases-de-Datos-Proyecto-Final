@@ -9,7 +9,8 @@ import gestor.SolicitanteGestor;
 import presentacion.*;
 
 /**
- *
+ * Implementación de la interfaz Aplicacion que actúa como mediador principal de la aplicación.
+ * Gestiona las vistas, oyentes y gestores para la funcionalidad de inicio de sesión y registro de usuarios.
  * @author amirz
  */
 public class MediadorAplicacion implements Aplicacion {
@@ -28,6 +29,10 @@ public class MediadorAplicacion implements Aplicacion {
     private MensajeroGestor gestorMensajero;
     private SolicitanteGestor gestorSolicitante;
     
+    /**
+     * Construtor de la clase MediadorAplicación
+     * Inicializa las instancias de las vistas, gestores y oyentes necesarios para la aplicación.
+     */
     public MediadorAplicacion() {
         //Instancias de las vistas
         vistaInicioSesion = new VistaInicioSesion();
@@ -47,10 +52,18 @@ public class MediadorAplicacion implements Aplicacion {
         iniciar();
     } 
     
+    /**
+     * Inicia la aplicación mostrando la vista de inicio de sesión.
+     */
     public void iniciar() {
         inicioSesion.desplegar(true);
     }
     
+    /**
+     * Método de notificación para cambiar entre vistas según el mensaje recibido.
+     * @param aplicacion    Objeto que envía la notificación.
+     * @param mensaje       Mensaje recibido para cambiar entre vistas.
+     */
     @Override
     public void notificar(Object aplicacion, String mensaje) {
         if(aplicacion instanceof InicioSesion) {

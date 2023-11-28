@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * Vista que muestra el formulario de registro para un Mensajero nuevo.
  * @author amirz
  */
 public class VistaRegistroMensajero extends javax.swing.JFrame {
@@ -60,8 +60,10 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
         marca = new javax.swing.JLabel();
         tfMatricula = new javax.swing.JTextField();
         tfMarca = new javax.swing.JTextField();
+        CancelarRM = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         tfNumeroDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +151,8 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         marca.setText("Marca");
 
+        CancelarRM.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,7 +185,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                                     .addComponent(tfSegundoNombre)
                                     .addComponent(tfPrimerApellido)
                                     .addComponent(tfSegundoApellido)
-                                    .addComponent(cbSexo, 0, 129, Short.MAX_VALUE)
+                                    .addComponent(cbSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(tfTelefono))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,12 +201,14 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(telefono)
-                                .addGap(276, 276, 276)
+                                .addGap(281, 281, 281)
                                 .addComponent(marca))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(252, 252, 252)
-                                .addComponent(btnRegistrarMensajero)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CancelarRM)
+                                    .addComponent(btnRegistrarMensajero))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tfCorreoElectronico)
                     .addComponent(tfDireccion)
@@ -281,9 +287,11 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                     .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(marca)
                     .addComponent(tfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(btnRegistrarMensajero)
-                .addGap(25, 25, 25))
+                .addGap(18, 18, 18)
+                .addComponent(CancelarRM)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -353,6 +361,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CancelarRM;
     public javax.swing.JButton btnRegistrarMensajero;
     public javax.swing.JComboBox<String> cbMedioServicio;
     public javax.swing.JComboBox<String> cbMedioTransporte;
