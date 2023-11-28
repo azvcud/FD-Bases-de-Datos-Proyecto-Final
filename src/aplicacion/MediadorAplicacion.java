@@ -45,7 +45,7 @@ public class MediadorAplicacion implements Aplicacion {
         
         
         //Instancias de los oyentes
-        inicioSesion = new InicioSesion(vistaInicioSesion, this);
+        inicioSesion = new InicioSesion(vistaInicioSesion, gestorSolicitante, gestorMensajero, this);
         registroMensajero = new RegistroMensajero(vistaRegistroMensajero, gestorMensajero, this);
         registroSolicitante = new RegistroSolicitante(vistaRegistroSolicitante, gestorSolicitante, this);
         

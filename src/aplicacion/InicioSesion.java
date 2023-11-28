@@ -4,6 +4,8 @@
  */
 package aplicacion;
 
+import gestor.MensajeroGestor;
+import gestor.SolicitanteGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import presentacion.VistaInicioSesion;
@@ -16,7 +18,10 @@ public class InicioSesion implements ActionListener {
     
     private Aplicacion mediador;        // Instancia del mediador de la aplicación
     private VistaInicioSesion vista;    // Vista para el inicio de sesión
+    
     //Gestor
+    private MensajeroGestor gestorMensajero;
+    private SolicitanteGestor gestorSolicitante;
     
     
     /**
@@ -28,9 +33,11 @@ public class InicioSesion implements ActionListener {
      * @param mediador  Aplicacion que actúa como mediador entre componentes.
      */
     //Pueden modificar el constructor en caso de que necesite uno o más gestores
-    public InicioSesion(VistaInicioSesion vista, Aplicacion mediador) {
+    public InicioSesion(VistaInicioSesion vista, SolicitanteGestor gestorSolicitante, MensajeroGestor gestorMensajero, Aplicacion mediador) {
         this.vista = vista;
         this.mediador = mediador;
+        this.gestorSolicitante = gestorSolicitante;
+        this.gestorMensajero = gestorMensajero;
         
         // Asigna este objeto como ActionListener de los botones de la vista
         this.vista.btnInicioMensajero.addActionListener(this);
@@ -50,6 +57,8 @@ public class InicioSesion implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnRegistroMensajero) { mediador.notificar(this, "Registrar mensajero"); }
         if (e.getSource() == vista.btnRegistroSolicitante) { mediador.notificar(this, "Registrar solicitante"); }
+        if (e.getSource() == vista.btnInicioMensajero) { /*JOption 1*/ } 
+        if (e.getSource() == vista.btnInicioSolicitante) { /*JOption 2*/ } 
     }
 
     /**
