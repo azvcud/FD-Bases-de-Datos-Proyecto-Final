@@ -4,6 +4,12 @@
  */
 package presentacion;
 
+import javax.swing.text.MaskFormatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JFormattedTextField;
+
 /**
  * Vista que muestrar el formulario para el registro de un nuevo Servicio solicitado por un Solicitante.
  * @author amirz
@@ -26,21 +32,168 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txNumeroServicio = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        cbTipoServicio = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txHoraServicio = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txCantidadTrayectos = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txIdSolicitante = new javax.swing.JTextField();
+        cbCiudad = new javax.swing.JComboBox<>();
+        cbTipoIdSolicitante = new javax.swing.JComboBox<>();
+        btRegistrarServicio = new javax.swing.JButton();
+        txFechaServicio = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Registro servicio");
+
+        jLabel2.setText("Numero servicio");
+
+        txNumeroServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txNumeroServicioActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Tipo servicio");
+
+        cbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Documento", "Factura", "Pequeño", "Mediano", "Grande" }));
+
+        jLabel4.setText("Hora servicio");
+
+        jLabel5.setText("Fecha servicio");
+
+        txHoraServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txHoraServicioActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Cantidad de trayectos");
+
+        jLabel7.setText("Ciudad");
+
+        jLabel8.setText("Id Solicitante");
+
+        jLabel9.setText("Tipo ID");
+
+        cbCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bogota", "Cali" }));
+
+        cbTipoIdSolicitante.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CC", "TI", "RC", "CE" }));
+
+        btRegistrarServicio.setText("Registrar servicio");
+        btRegistrarServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRegistrarServicioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(60, 60, 60)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cbTipoServicio, 0, 103, Short.MAX_VALUE)
+                                    .addComponent(txNumeroServicio)
+                                    .addComponent(txHoraServicio))
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel9)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btRegistrarServicio)
+                                .addGap(31, 31, 31)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txIdSolicitante)
+                            .addComponent(cbCiudad, 0, 96, Short.MAX_VALUE)
+                            .addComponent(cbTipoIdSolicitante, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txCantidadTrayectos)
+                            .addComponent(txFechaServicio, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))))
+                .addGap(35, 35, 35))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(226, 226, 226))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txNumeroServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(cbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(cbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(txIdSolicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txHoraServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel9)
+                                .addComponent(cbTipoIdSolicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5))
+                    .addComponent(txFechaServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txCantidadTrayectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addComponent(btRegistrarServicio)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txNumeroServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNumeroServicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txNumeroServicioActionPerformed
+
+    private void txHoraServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txHoraServicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txHoraServicioActionPerformed
+
+    private void btRegistrarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegistrarServicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btRegistrarServicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +231,23 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btRegistrarServicio;
+    public javax.swing.JComboBox<String> cbCiudad;
+    public javax.swing.JComboBox<String> cbTipoIdSolicitante;
+    public javax.swing.JComboBox<String> cbTipoServicio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    public javax.swing.JTextField txCantidadTrayectos;
+    public javax.swing.JTextField txFechaServicio;
+    public javax.swing.JTextField txHoraServicio;
+    public javax.swing.JTextField txIdSolicitante;
+    public javax.swing.JTextField txNumeroServicio;
     // End of variables declaration//GEN-END:variables
 }
