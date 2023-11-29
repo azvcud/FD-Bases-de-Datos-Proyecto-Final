@@ -8,7 +8,11 @@ import gestor.MensajeroGestor;
 import gestor.SolicitanteGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import negocio.Mensajero;
+import negocio.Solicitante;
 import presentacion.VistaInicioSesion;
+import util.RHException;
 
 /**
  * Clase que muestra la vista de inicio en la que se ven las opciones para ingresar a la aplicación
@@ -22,6 +26,9 @@ public class InicioSesion implements ActionListener {
     //Gestor
     private MensajeroGestor gestorMensajero;
     private SolicitanteGestor gestorSolicitante;
+    
+    private Solicitante solicitante;
+    private Mensajero mensajero;
     
     
     /**
@@ -57,8 +64,8 @@ public class InicioSesion implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnRegistroMensajero) { mediador.notificar(this, "Registrar mensajero"); }
         if (e.getSource() == vista.btnRegistroSolicitante) { mediador.notificar(this, "Registrar solicitante"); }
-        if (e.getSource() == vista.btnInicioMensajero) { /*JOption 1*/ } 
-        if (e.getSource() == vista.btnInicioSolicitante) { /*JOption 2*/ } 
+        if (e.getSource() == vista.btnInicioMensajero) { iniciarSesionMensajero(); } 
+        if (e.getSource() == vista.btnInicioSolicitante) {iniciarSesionSolicitane(); } 
     }
 
     /**
@@ -70,5 +77,48 @@ public class InicioSesion implements ActionListener {
         if(estado)  { vista.setVisible(estado); }
         else        { vista.dispose(); }
     }
+    
+    
+    public void iniciarSesionSolicitane(){
+        // Muestra un cuadro de diálogo de entrada de texto
+        String textoIngresado = JOptionPane.showInputDialog("Inserte su id:");
+        
+         
+        try { 
+             // Verifica el id del usuario
+            if (gestorSolicitante.existeSolitante(Long.parseLong(textoIngresado))==true){
+                // Poner acá lo que pasa cuando el usuario existe
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso ID:" + textoIngresado);
+            }else {
+                // Lo que pasa cuando el usuario no existe
+                JOptionPane.showMessageDialog(null, "ERROR: Usuario no existe");
+            }
+        
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);          
+        }   
+    }   
+    
+     public void iniciarSesionMensajero(){
+        // Muestra un cuadro de diálogo de entrada de texto
+        String textoIngresado = JOptionPane.showInputDialog("Inserte su id:");
+        
+         
+        try { 
+             // Verifica el id del usuario
+            if (gestorMensajero.existeMensajero(Long.parseLong(textoIngresado))==true){
+                // Poner acá lo que pasa cuando el usuario existe
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso ID:" + textoIngresado);
+            }else {
+                // Lo que pasa cuando el usuario no existe
+                JOptionPane.showMessageDialog(null, "ERROR: Usuario no existe");
+            }
+        
+          } catch (RHException f) {
+              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);          
+        }   
+    }   
+    
+    
     
 }
