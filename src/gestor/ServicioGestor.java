@@ -8,7 +8,9 @@ import datos.ServicioDAO;
 import datos.SolicitanteDAO;
 import datos.TarifaDAO;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import negocio.Servicio;
 import negocio.Solicitante;
@@ -67,7 +69,14 @@ public class ServicioGestor {
       // Registro del Servicio en la base de datos usando el objeto ServicioDAO
       servicioDAO.registrarServicio(servicio);
     }
-
+     
+     
+    public List<Servicio> buscarServiciosPorDocumento(long k_numeroDocumento) throws RHException {
+        List<Servicio> servicios = new ArrayList<>();
+        
+        servicios=servicioDAO.buscarServiciosPorDocumento(k_numeroDocumento);
+        return servicios;
+    }    
     //Getters y setter para acceder y modificar ServicioDAO y Servicio
     public ServicioDAO getServicioDAO() {
         return servicioDAO;

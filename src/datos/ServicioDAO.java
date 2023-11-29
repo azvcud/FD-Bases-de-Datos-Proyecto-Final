@@ -70,13 +70,13 @@ public class ServicioDAO {
       
     }
     
-               public List<Servicio> buscarServiciosPorDocumento(int k_numeroDocumento) throws RHException {
+   public List<Servicio> buscarServiciosPorDocumento(long k_numeroDocumento) throws RHException {
         List<Servicio> servicios = new ArrayList<>();
         try {
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             String strSQL = "SELECT k_numerodeservicio, n_tipodeservicio, f_fecha, v_costototal, k_numerodocumentos FROM servicio WHERE servicio.k_numerodocumentos = ?";
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-            prepStmt.setInt(1, k_numeroDocumento);
+            prepStmt.setLong(1, k_numeroDocumento);
             ResultSet rs = prepStmt.executeQuery();
             while (rs.next()) {
                 Servicio servicio = new Servicio();
