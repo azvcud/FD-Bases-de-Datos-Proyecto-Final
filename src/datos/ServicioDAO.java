@@ -4,12 +4,15 @@
  */
 package datos;
 
+import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import negocio.Servicio;
 import negocio.Solicitante;
 import util.RHException;
@@ -67,5 +70,32 @@ public class ServicioDAO {
       
     }
     
-     
- }
+               public List<Servicio> buscarServiciosPorDocumento(int k_numeroDocumento) throws RHException {
+        List<Servicio> servicios = new ArrayList<>();
+        try {
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            String strSQL = "SELECT k_numerodeservicio, n_tipodeservicio, f_fecha, v_costototal, k_numerodocumentos FROM servicio WHERE servicio.k_numerodocumentos = ?";
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setInt(1, k_numeroDocumento);
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                Servicio servicio = new Servicio();
+                servicio.setK_numeroDeServicio(rs.getInt("k_numerodeservicio"));
+                servicio.setN_tipoDeServicio(rs.getString("n_tipodeservicio"));
+                
+                // Convertir el Date a String antes de asignarlo al objeto Servicio
+                Date fecha = rs.getDate("f_fecha");
+                String fechaStr = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
+                servicio.setF_fecha(fechaStr);
+                
+                servicio.setV_costoTotal((float) rs.getDouble("v_costototal"));
+                servicio.setK_numeroDocumentoS(rs.getInt("k_numerodocumentos"));
+                servicios.add(servicio);
+            }
+            ServiceLocator.getInstance().liberarConexion();
+        } catch (SQLException e) {
+            throw new RHException("ServicioDAO", e.getMessage());
+        }
+        return servicios;
+    }
+}
