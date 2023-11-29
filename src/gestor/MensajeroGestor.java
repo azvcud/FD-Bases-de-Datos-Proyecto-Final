@@ -83,7 +83,40 @@ public class MensajeroGestor {
     }
 
     // Getters y setters para acceder y modificar MensajeroDAP y Mensajero
-   
+    
+    public Mensajero buscarMensajero(long k_numeroDocumento)throws RHException{
+        Mensajero mensajero;
+        mensajero =mensajeroDAO.buscarMensajero(k_numeroDocumento);
+        return mensajero;
+    }  
+    
+    
+    public boolean existeMensajero(long k_numeroDocumento)throws RHException{
+        if (mensajeroDAO.buscarMensajero(k_numeroDocumento) != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+     
+    public void actualizarDatos(long k_numeroDocumento,String k_tipodocumento, String n_primerNombre, String n_segundonombre,
+             String n_primerapellido, String n_segundoapellido, String n_sexo,long q_telefono, String n_correoelectronico, String n_direccion,
+             String n_nacionalidad, boolean q_seguridadsocial, String n_mediodeservicio, String n_mediodetransporte,
+             String n_matricula, String n_marca) throws RHException {
+        
+      mensajeroDAO.modificarMensajero(k_numeroDocumento, n_primerNombre, n_segundonombre, n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico, n_direccion,
+            n_nacionalidad,q_seguridadsocial,  n_mediodeservicio,  n_mediodetransporte,
+            n_matricula,  n_marca  );
+    }
+    
+    public void eliminarMensajero(long k_numeroDocumento) throws RHException {
+      mensajeroDAO.eliminarMensajero(k_numeroDocumento);
+    }
+    
+         
+     
+     
     public MensajeroDAO getMensajeroDAO() {
         return mensajeroDAO;
     }
