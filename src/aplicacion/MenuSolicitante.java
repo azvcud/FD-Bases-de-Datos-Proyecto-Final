@@ -8,6 +8,12 @@ import gestor.ServicioGestor;
 import gestor.SolicitanteGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
+import negocio.Servicio;
 import negocio.Solicitante;
 import presentacion.MenuPrincipalSolicitante;
 import util.RHException;
@@ -25,6 +31,7 @@ public class MenuSolicitante implements ActionListener {
     private SolicitanteGestor gestorSolicitante;
     
     private Solicitante sesionSolicitante;
+    List<Servicio> servicios = new ArrayList<>();
 
     public MenuSolicitante(Aplicacion mediador, MenuPrincipalSolicitante vistaMenu, ServicioGestor gestorServicio, SolicitanteGestor gestorSolicitante) {
         this.mediador = mediador;
@@ -42,6 +49,31 @@ public class MenuSolicitante implements ActionListener {
         vistaMenu.documentoSolicitante.setText(Long.toString(sesionSolicitante.getK_numeroDocumento()));
         vistaMenu.sexo.setText(sesionSolicitante.getN_sexo());
     }
+    
+    public void cargarServicios() throws RHException {
+        sesionSolicitante = gestorSolicitante.buscarSolicitante(mediador.getIdSesion());
+        vistaMenu.nombreSolicitante.setText(sesionSolicitante.getN_primerNombre());
+        vistaMenu.documentoSolicitante.setText(Long.toString(sesionSolicitante.getK_numeroDocumento()));
+        vistaMenu.sexo.setText(sesionSolicitante.getN_sexo());
+        servicios=gestorServicio.buscarServiciosPorDocumento(mediador.getIdSesion());
+        DefaultTableModel modelo1 = new DefaultTableModel();
+        
+        modelo1.addColumn("Numero de Servicio"); 
+        modelo1.addColumn("Tipo de Servicio"); 
+        modelo1.addColumn("Fecha"); 
+        modelo1.addColumn("Costo Total"); 
+        
+        ;
+        
+        vistaMenu.jTable1.setModel(modelo1);
+        
+        for(int i=0;i<servicios.size();i++){
+            modelo1.addRow(new Object[]{servicios.get(i).getK_numeroDeServicio(),servicios.get(i).getN_tipoDeServicio()
+                    ,servicios.get(i).getQ_cantidadDeTrayectos(),servicios.get(i).getV_costoTotal()});
+
+        }
+    }
+    
     
     @Override
     public void actionPerformed(ActionEvent e) {
