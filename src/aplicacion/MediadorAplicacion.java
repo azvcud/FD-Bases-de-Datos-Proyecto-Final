@@ -134,6 +134,7 @@ public class MediadorAplicacion implements Aplicacion {
                     {
                         try {
                             menuMensajero.cargarInformacion();
+                            menuMensajero.cargarServicios();
                         } catch (RHException ex) {
                             Logger.getLogger(MediadorAplicacion.class.getName()).log(Level.SEVERE, null, ex);
                         }

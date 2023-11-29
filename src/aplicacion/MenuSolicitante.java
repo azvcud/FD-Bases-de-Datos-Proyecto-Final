@@ -55,7 +55,7 @@ public class MenuSolicitante implements ActionListener {
         vistaMenu.nombreSolicitante.setText(sesionSolicitante.getN_primerNombre());
         vistaMenu.documentoSolicitante.setText(Long.toString(sesionSolicitante.getK_numeroDocumento()));
         vistaMenu.sexo.setText(sesionSolicitante.getN_sexo());
-        servicios=gestorServicio.buscarServiciosPorDocumento(mediador.getIdSesion());
+        servicios=gestorServicio.buscarServiciosPorDocumentoSolicitante(mediador.getIdSesion());
         DefaultTableModel modelo1 = new DefaultTableModel();
         
         modelo1.addColumn("Numero de Servicio"); 
@@ -69,7 +69,7 @@ public class MenuSolicitante implements ActionListener {
         
         for(int i=0;i<servicios.size();i++){
             modelo1.addRow(new Object[]{servicios.get(i).getK_numeroDeServicio(),servicios.get(i).getN_tipoDeServicio()
-                    ,servicios.get(i).getQ_cantidadDeTrayectos(),servicios.get(i).getV_costoTotal()});
+                    ,servicios.get(i).getF_fecha(),servicios.get(i).getV_costoTotal()});
 
         }
     }

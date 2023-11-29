@@ -43,6 +43,7 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
         medioTransporte = new javax.swing.JLabel();
         medioServicio = new javax.swing.JLabel();
         sexo = new javax.swing.JLabel();
+        btnAceptarServicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,13 +66,13 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -91,6 +92,13 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
         medioServicio.setText("LabelMS");
 
         sexo.setText("jLabel13");
+
+        btnAceptarServicio.setText("Aceptar Servicio");
+        btnAceptarServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarServicioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -140,6 +148,10 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
                 .addGap(237, 237, 237)
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(btnAceptarServicio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +194,9 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAceptarServicio)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,6 +220,10 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void btnAceptarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarServicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAceptarServicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,6 +261,7 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAceptarServicio;
     public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JLabel documentoMensajero;
     private javax.swing.JLabel jLabel1;
@@ -255,7 +274,7 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     public javax.swing.JLabel medioServicio;
     public javax.swing.JLabel medioTransporte;
     public javax.swing.JLabel nombreMensajero;

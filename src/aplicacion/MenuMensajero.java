@@ -8,7 +8,12 @@ import gestor.MensajeroGestor;
 import gestor.ServicioGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import negocio.Mensajero;
+import negocio.Servicio;
 import presentacion.MenuPrincipalMensajero;
 import util.RHException;
 
@@ -24,6 +29,7 @@ public class MenuMensajero implements ActionListener {
     private MensajeroGestor gestorMensajero;
     
     private Mensajero sesionMensajero;
+    List<Servicio> servicios = new ArrayList<>();
 
     public MenuMensajero(Aplicacion mediador, MenuPrincipalMensajero vistaMenu, ServicioGestor gestorServicio, MensajeroGestor gestorMensajero) {
         this.mediador = mediador;
@@ -32,6 +38,7 @@ public class MenuMensajero implements ActionListener {
         this.gestorMensajero = gestorMensajero;
         
         this.vistaMenu.btnCerrarSesion.addActionListener(this);
+        this.vistaMenu.btnAceptarServicio.addActionListener(this);
     }
 
     public void cargarInformacion() throws RHException {
@@ -43,10 +50,48 @@ public class MenuMensajero implements ActionListener {
         vistaMenu.sexo.setText(sesionMensajero.getN_sexo());
     }
     
+    
+    public void cargarServicios() throws RHException {
+        sesionMensajero = gestorMensajero.buscarMensajero(mediador.getIdSesion());
+        vistaMenu.nombreMensajero.setText(sesionMensajero.getN_primerNombre());
+        vistaMenu.documentoMensajero.setText(Long.toString(sesionMensajero.getK_numeroDocumento()));
+        vistaMenu.sexo.setText(sesionMensajero.getN_sexo());
+        servicios=gestorServicio.buscarServiciosPorDocumentoMensajero(sesionMensajero.getM_medioDeServicio());
+        DefaultTableModel modelo1 = new DefaultTableModel();
+        
+        modelo1.addColumn("Numero de Servicio"); 
+        modelo1.addColumn("Tipo de Servicio"); 
+        modelo1.addColumn("Fecha"); 
+        modelo1.addColumn("Costo Total"); 
+        
+        ;
+        
+        vistaMenu.jTable1.setModel(modelo1);
+        
+        for(int i=0;i<servicios.size();i++){
+            modelo1.addRow(new Object[]{servicios.get(i).getK_numeroDeServicio(),servicios.get(i).getN_tipoDeServicio()
+                    ,servicios.get(i).getF_fecha(),servicios.get(i).getV_costoTotal()});
+
+        }
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnCerrarSesion) { mediador.notificar(this, "Cierre de sesión");}
+        if(e.getSource() == vistaMenu.btnAceptarServicio) { 
+           System.out.print("pepe");
+           int fila= vistaMenu.jTable1.getSelectedRow();
+           System.out.print(fila);
+           try {  
+           gestorServicio.añadirMensajero(servicios.get(fila).getK_numeroDeServicio(), 
+                 sesionMensajero.getK_numeroDocumento(), sesionMensajero.getK_tipoDocumento());
+            } catch (RHException f) {
+             JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
+              
+           }   
+         }
     }
+    
     
     public void desplegar(boolean estado) {
         if(estado)  { vistaMenu.setVisible(estado); }
