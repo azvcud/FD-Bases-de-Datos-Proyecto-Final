@@ -44,6 +44,7 @@ public class RegistroServicio implements ActionListener{
         
         this.vista.btnAgregarActividad.addActionListener(this);
         this.vista.btRegistrarServicio.addActionListener(this);
+        this.vista.btnCancelar.addActionListener(this);
         
         modelo = new DefaultTableModel();
         modelo.addColumn("Número de trayecto");
@@ -85,6 +86,8 @@ public class RegistroServicio implements ActionListener{
             
             float v_costoTotal = 45000f;
             
+            vista.tablaActividades.clearSelection();
+            
             try {
                 gestorServicio.registrarServicio(k_numeroDeServicio, n_tipoDeServicio, q_cantidadDeTrayectos, v_costoTotal, k_idCiudad, k_numeroDocumentoS, k_tipoDocumentoS);
                 
@@ -107,5 +110,7 @@ public class RegistroServicio implements ActionListener{
             modelo.addRow(new Object[]{vista.tablaActividades.getRowCount() + 1,"",""});
             vista.tablaActividades.setModel(modelo);
         }
+        
+        if(e.getSource() == vista.btnCancelar) { mediador.notificar(this, "Salir registro");}
     }
 }

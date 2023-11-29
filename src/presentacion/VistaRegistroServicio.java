@@ -49,6 +49,7 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaActividades = new javax.swing.JTable();
         btnAgregarActividad = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +98,8 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
 
         btnAgregarActividad.setText("Agregar actividad");
 
+        btnCancelar.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,10 +142,12 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
                                     .addComponent(cbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
+                        .addGap(53, 53, 53)
                         .addComponent(btRegistrarServicio)
-                        .addGap(55, 55, 55)
-                        .addComponent(btnAgregarActividad)))
+                        .addGap(28, 28, 28)
+                        .addComponent(btnAgregarActividad)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -173,7 +178,8 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btRegistrarServicio)
-                    .addComponent(btnAgregarActividad))
+                    .addComponent(btnAgregarActividad)
+                    .addComponent(btnCancelar))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -226,6 +232,7 @@ public class VistaRegistroServicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btRegistrarServicio;
     public javax.swing.JButton btnAgregarActividad;
+    public javax.swing.JButton btnCancelar;
     public javax.swing.JComboBox<String> cbCiudad;
     public javax.swing.JComboBox<String> cbTipoIdSolicitante;
     public javax.swing.JComboBox<String> cbTipoServicio;

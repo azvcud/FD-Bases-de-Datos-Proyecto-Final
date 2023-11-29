@@ -72,7 +72,7 @@ public class SolicitanteGestor {
         return solicitante;
     }
      
-    public boolean existeSolitante(long k_numeroDocumento)throws RHException{
+    public boolean existeSolicitante(long k_numeroDocumento)throws RHException{
         if (solicitanteDAO.buscarSolicitante(k_numeroDocumento) != null){
             return true;
         }else{

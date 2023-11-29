@@ -83,12 +83,15 @@ public class InicioSesion implements ActionListener {
         // Muestra un cuadro de diálogo de entrada de texto
         String textoIngresado = JOptionPane.showInputDialog("Inserte su id:");
         
-         
+        
         try { 
              // Verifica el id del usuario
-            if (gestorSolicitante.existeSolitante(Long.parseLong(textoIngresado))==true){
+            if (gestorSolicitante.existeSolicitante(Long.parseLong(textoIngresado))==true){
                 // Poner acá lo que pasa cuando el usuario existe
-                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso ID:" + textoIngresado);
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso ID: " + textoIngresado);
+                
+                mediador.setIdSesion(Long.parseLong(textoIngresado));
+                mediador.notificar(this, "Inicio de solicitante");
             }else {
                 // Lo que pasa cuando el usuario no existe
                 JOptionPane.showMessageDialog(null, "ERROR: Usuario no existe");
@@ -108,7 +111,10 @@ public class InicioSesion implements ActionListener {
              // Verifica el id del usuario
             if (gestorMensajero.existeMensajero(Long.parseLong(textoIngresado))==true){
                 // Poner acá lo que pasa cuando el usuario existe
-                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso ID:" + textoIngresado);
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso ID: " + textoIngresado);
+                
+                mediador.setIdSesion(Long.parseLong(textoIngresado));
+                mediador.notificar(this, "Inicio de mensajero");
             }else {
                 // Lo que pasa cuando el usuario no existe
                 JOptionPane.showMessageDialog(null, "ERROR: Usuario no existe");

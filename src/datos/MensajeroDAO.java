@@ -80,9 +80,9 @@ public class MensajeroDAO {
         try {
             Mensajero e = new Mensajero(); //Instancia el objeto para retornar los datos del empleado
             String strSQL = "SELECT k_numeroDocumento, k_tipodocumento, n_primerNombre, n_segundonombre,"
-                    + "n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico,n_direccion,"
+                    + "n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico, n_direccion,"
                     + "n_nacionalidad, q_seguridadsocial, n_mediodeservicio, n_mediodetransporte,"
-                    + "n_matricula, n_marca, v_pago, v_calificacion"
+                    + "n_matricula, n_marca"
                     + " FROM mensajero WHERE k_numeroDocumento = ?";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);

@@ -60,7 +60,10 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
         marca = new javax.swing.JLabel();
         tfMatricula = new javax.swing.JTextField();
         tfMarca = new javax.swing.JTextField();
-        CancelarRM = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnAgregarJornada = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaJornada = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -151,74 +154,93 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
 
         marca.setText("Marca");
 
-        CancelarRM.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
+
+        btnAgregarJornada.setText("Añadir jornada");
+
+        tablaJornada.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaJornada);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(265, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(registroMensajero)
                 .addGap(254, 254, 254))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(numeroDocumento)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfNumeroDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tipoDocumento)
-                                    .addComponent(primerNombre)
-                                    .addComponent(segundoNombre)
-                                    .addComponent(primerApellido)
-                                    .addComponent(segundoApellido)
-                                    .addComponent(jLabel1))
-                                .addGap(39, 39, 39)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cbTipoDocumento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tfPrimerNombre)
-                                    .addComponent(tfSegundoNombre)
-                                    .addComponent(tfPrimerApellido)
-                                    .addComponent(tfSegundoApellido)
-                                    .addComponent(cbSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tfTelefono))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(correoElectronico)
-                            .addComponent(direccion)
-                            .addComponent(nacionalidad)
-                            .addComponent(seguridadSocial)
-                            .addComponent(medioServicio)
-                            .addComponent(medioTransporte)
-                            .addComponent(matricula))
-                        .addGap(29, 29, 29))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(numeroDocumento)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfNumeroDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tipoDocumento)
+                                            .addComponent(primerNombre)
+                                            .addComponent(segundoNombre)
+                                            .addComponent(primerApellido)
+                                            .addComponent(segundoApellido)
+                                            .addComponent(jLabel1))
+                                        .addGap(39, 39, 39)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cbTipoDocumento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(tfPrimerNombre)
+                                            .addComponent(tfSegundoNombre)
+                                            .addComponent(tfPrimerApellido)
+                                            .addComponent(tfSegundoApellido)
+                                            .addComponent(cbSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(tfTelefono))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(correoElectronico)
+                                    .addComponent(direccion)
+                                    .addComponent(nacionalidad)
+                                    .addComponent(seguridadSocial)
+                                    .addComponent(medioServicio)
+                                    .addComponent(medioTransporte)
+                                    .addComponent(matricula))
+                                .addGap(29, 29, 29))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(telefono)
                                 .addGap(281, 281, 281)
-                                .addComponent(marca))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(252, 252, 252)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CancelarRM)
-                                    .addComponent(btnRegistrarMensajero))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tfCorreoElectronico)
-                    .addComponent(tfDireccion)
-                    .addComponent(tfNacionalidad)
-                    .addComponent(cbSeguridadSocial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cbMedioServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cbMedioTransporte, 0, 109, Short.MAX_VALUE)
-                    .addComponent(tfMatricula)
-                    .addComponent(tfMarca))
+                                .addComponent(marca)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfCorreoElectronico)
+                            .addComponent(tfDireccion)
+                            .addComponent(tfNacionalidad)
+                            .addComponent(cbSeguridadSocial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbMedioServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbMedioTransporte, 0, 109, Short.MAX_VALUE)
+                            .addComponent(tfMatricula)
+                            .addComponent(tfMarca))))
                 .addGap(40, 40, 40))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(btnCancelar)
+                .addGap(79, 79, 79)
+                .addComponent(btnRegistrarMensajero)
+                .addGap(71, 71, 71)
+                .addComponent(btnAgregarJornada)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,11 +309,14 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
                     .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(marca)
                     .addComponent(tfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(btnRegistrarMensajero)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(CancelarRM)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelar)
+                    .addComponent(btnRegistrarMensajero)
+                    .addComponent(btnAgregarJornada))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -361,7 +386,8 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelarRM;
+    public javax.swing.JButton btnAgregarJornada;
+    public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnRegistrarMensajero;
     public javax.swing.JComboBox<String> cbMedioServicio;
     public javax.swing.JComboBox<String> cbMedioTransporte;
@@ -371,6 +397,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     private javax.swing.JLabel correoElectronico;
     private javax.swing.JLabel direccion;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel marca;
     private javax.swing.JLabel matricula;
     private javax.swing.JLabel medioServicio;
@@ -383,6 +410,7 @@ public class VistaRegistroMensajero extends javax.swing.JFrame {
     private javax.swing.JLabel segundoApellido;
     private javax.swing.JLabel segundoNombre;
     private javax.swing.JLabel seguridadSocial;
+    public javax.swing.JTable tablaJornada;
     private javax.swing.JLabel telefono;
     public javax.swing.JTextField tfCorreoElectronico;
     public javax.swing.JTextField tfDireccion;
