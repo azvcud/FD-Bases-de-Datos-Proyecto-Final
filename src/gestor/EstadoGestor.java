@@ -45,7 +45,7 @@ public class EstadoGestor {
      * @throws RHException          Excepción en caso de que ocurra un error al registrar la Tarifa en la base de datos.
      */
     
-     public void registrarEstado(int k_idEstado, String n_estadoRegistrado, String f_fecha, String n_comentario, 
+     public void registrarEstado(int k_idEstado, String n_estadoRegistrado,  String n_comentario, 
              int k_numeroDeServicio ) throws RHException {
       // Crea un objeto Tarifa con los datos proporcionados
       estado = new Estado();
@@ -53,7 +53,6 @@ public class EstadoGestor {
       // Configura los atributos de la Tarifa
       estado.setK_idEstado(k_idEstado);
       estado.setN_estadoRegistrado(n_estadoRegistrado);
-      estado.setF_fecha(f_fecha);
       estado.setN_comentario(n_comentario);
       estado.setK_numeroDeServicio(k_numeroDeServicio);
       

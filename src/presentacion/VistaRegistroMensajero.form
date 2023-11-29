@@ -27,82 +27,85 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="265" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="registroMensajero" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="numeroDocumento" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tfNumeroDocumento" pref="129" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tipoDocumento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="primerNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="segundoNombre" min="-2" max="-2" attributes="0"/>
-                                  <Component id="primerApellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="segundoApellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cbTipoDocumento" max="32767" attributes="0"/>
-                                  <Component id="tfPrimerNombre" max="32767" attributes="0"/>
-                                  <Component id="tfSegundoNombre" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfPrimerApellido" max="32767" attributes="0"/>
-                                  <Component id="tfSegundoApellido" max="32767" attributes="0"/>
-                                  <Component id="cbSexo" max="32767" attributes="0"/>
-                                  <Component id="tfTelefono" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="numeroDocumento" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="tfNumeroDocumento" pref="129" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tipoDocumento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="primerNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="segundoNombre" min="-2" max="-2" attributes="0"/>
+                                          <Component id="primerApellido" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="segundoApellido" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="cbTipoDocumento" max="32767" attributes="0"/>
+                                          <Component id="tfPrimerNombre" max="32767" attributes="0"/>
+                                          <Component id="tfSegundoNombre" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tfPrimerApellido" max="32767" attributes="0"/>
+                                          <Component id="tfSegundoApellido" max="32767" attributes="0"/>
+                                          <Component id="cbSexo" max="32767" attributes="0"/>
+                                          <Component id="tfTelefono" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
+                              <EmptySpace pref="50" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="correoElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="direccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nacionalidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="seguridadSocial" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="medioServicio" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="medioTransporte" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="matricula" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="correoElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="direccion" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="nacionalidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="seguridadSocial" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="medioServicio" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="medioTransporte" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="matricula" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="telefono" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="281" max="-2" attributes="0"/>
                               <Component id="marca" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CancelarRM" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnRegistrarMensajero" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace pref="97" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="tfCorreoElectronico" max="32767" attributes="0"/>
+                          <Component id="tfDireccion" max="32767" attributes="0"/>
+                          <Component id="tfNacionalidad" max="32767" attributes="0"/>
+                          <Component id="cbSeguridadSocial" max="32767" attributes="0"/>
+                          <Component id="cbMedioServicio" max="32767" attributes="0"/>
+                          <Component id="cbMedioTransporte" pref="109" max="32767" attributes="0"/>
+                          <Component id="tfMatricula" max="32767" attributes="0"/>
+                          <Component id="tfMarca" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="tfCorreoElectronico" max="32767" attributes="0"/>
-                  <Component id="tfDireccion" max="32767" attributes="0"/>
-                  <Component id="tfNacionalidad" max="32767" attributes="0"/>
-                  <Component id="cbSeguridadSocial" max="32767" attributes="0"/>
-                  <Component id="cbMedioServicio" max="32767" attributes="0"/>
-                  <Component id="cbMedioTransporte" pref="109" max="32767" attributes="0"/>
-                  <Component id="tfMatricula" max="32767" attributes="0"/>
-                  <Component id="tfMarca" max="32767" attributes="0"/>
-              </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+              <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="btnRegistrarMensajero" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <Component id="btnAgregarJornada" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -190,11 +193,15 @@
                   <Component id="marca" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfMarca" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="btnRegistrarMensajero" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="CancelarRM" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRegistrarMensajero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAgregarJornada" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -445,13 +452,45 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="CancelarRM">
+    <Component class="javax.swing.JButton" name="btnCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelarRMActionPerformed"/>
-      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
+    <Component class="javax.swing.JButton" name="btnAgregarJornada">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;adir jornada"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tablaJornada">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="4">
+                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+              </Table>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import negocio.Estado;
 import util.RHException;
 import util.ServiceLocator;
@@ -39,7 +40,8 @@ public class EstadoDAO {
         // Establece los parametros para insertar la inserción de la Tarifa en la base de datos.
         prepStmt.setInt(1, estado.getK_idEstado()); 
         prepStmt.setString(2, estado.getN_estadoRegistrado()); 
-        prepStmt.setDate(3, java.sql.Date.valueOf(estado.getF_fecha())); 
+        Date FyH = new Date();
+        prepStmt.setDate(3, new java.sql.Date(FyH.getYear(),FyH.getMonth(),FyH.getDay()));
         prepStmt.setString(4, estado.getN_comentario()); 
         prepStmt.setInt(5, estado.getK_numeroDeServicio());   
           

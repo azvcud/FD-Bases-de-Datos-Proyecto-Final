@@ -86,7 +86,7 @@ public class SolicitanteDAO {
                 e.setN_primerApellido(rs.getString(5));
                 e.setN_segundoApellido(rs.getString(6));
                 e.setN_sexo(rs.getString(7));
-                e.setQ_telefono(rs.getInt(8));
+                e.setQ_telefono(rs.getLong(8));
                 e.setN_correoElectronico(rs.getString(9));
                 e.setN_direccion(rs.getString(10));
                 existe = true;
@@ -99,7 +99,7 @@ public class SolicitanteDAO {
                 return null;
         } catch (SQLException e) {
             //captura y lanza la excepción RHException.
-            throw new RHException("EmpleadoDAO", e.getMessage());
+            throw new RHException("SolicitanteDAO", e.getMessage());
         } finally {
             //finaliza la coneccion con la base de datos.
             ServiceLocator.getInstance().liberarConexion();

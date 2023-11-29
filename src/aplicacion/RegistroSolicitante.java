@@ -39,6 +39,7 @@ public class RegistroSolicitante implements ActionListener {
         this.mediador = mediador;
         
         this.vista.btnRegistrarSolicitante.addActionListener(this);
+        this.vista.btnCancelar.addActionListener(this);
     }
 
     /**
@@ -82,6 +83,8 @@ public class RegistroSolicitante implements ActionListener {
                 JOptionPane.showMessageDialog(vista, "Ni Telefono ni Número de documento\npueden ser valores nulos.","Error al registrar", JOptionPane.ERROR_MESSAGE);
             }
         }
+        
+        if(e.getSource() == vista.btnCancelar) { mediador.notificar(this, "Regresar a inicio"); }
     }
     
     /**
