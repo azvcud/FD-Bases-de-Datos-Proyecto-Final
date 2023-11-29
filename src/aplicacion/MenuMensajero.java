@@ -38,6 +38,7 @@ public class MenuMensajero implements ActionListener {
         this.gestorMensajero = gestorMensajero;
         
         this.vistaMenu.btnCerrarSesion.addActionListener(this);
+        this.vistaMenu.btnAceptarServicio.addActionListener(this);
     }
 
     public void cargarInformacion() throws RHException {
@@ -78,12 +79,12 @@ public class MenuMensajero implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnCerrarSesion) { mediador.notificar(this, "Cierre de sesión");}
         if(e.getSource() == vistaMenu.btnAceptarServicio) { 
-           
+           System.out.print("pepe");
            int fila= vistaMenu.jTable1.getSelectedRow();
-        
+           System.out.print(fila);
            try {  
            gestorServicio.añadirMensajero(servicios.get(fila).getK_numeroDeServicio(), 
-                 Long.parseLong(sesionMensajero.getK_tipoDocumento())  , sesionMensajero.getK_tipoDocumento());
+                 sesionMensajero.getK_numeroDocumento(), sesionMensajero.getK_tipoDocumento());
             } catch (RHException f) {
              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               

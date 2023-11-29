@@ -133,8 +133,7 @@ public class ServicioDAO {
            try{
                 //Actualiza el mensajero del empleado en la base de datos.
 
-                String strSQL = "UPDATE servicio SET k_numerodocumentom = ?, k_tipodocumentom=?"
-                        + "WHERE servicio.k_numerodeservicio = ? ";
+                String strSQL = "UPDATE servicio SET k_numerodocumentom =?, k_tipodocumentom =? WHERE k_numerodeservicio = ?";
                 Connection conexion = ServiceLocator.getInstance().tomarConexion();
                 PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
                 prepStmt.setLong(3, k_numerodeservicio);
@@ -148,7 +147,7 @@ public class ServicioDAO {
                catch (SQLException e) {
                     //En caso de un error realiza un rollback y lanza la excepción RHException.
                     ServiceLocator.getInstance().rollback();
-                    throw new RHException("SolicitanteDAO", "No pudo modificar soliciante " + e.getMessage());
+                    throw new RHException("ServicioDAO", "No pudo modificar servicio " + e.getMessage());
                  } finally {
                     //finaliza la coneccion con la base de datos.
                       ServiceLocator.getInstance().liberarConexion();
