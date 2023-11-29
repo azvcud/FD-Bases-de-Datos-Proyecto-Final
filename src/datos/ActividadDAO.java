@@ -6,8 +6,14 @@ package datos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import negocio.Actividad;
+import negocio.Servicio;
 import util.RHException;
 import util.ServiceLocator;
 
@@ -45,5 +51,30 @@ public class ActividadDAO {
           // Finaliza la conexión con la base de datos.
          ServiceLocator.getInstance().liberarConexion();
       }
-    } 
+    }
+    
+    public List<Actividad> actividadPorServicios(long k_numeroDeServicio) throws RHException {
+        List<Actividad> actividades = new ArrayList<>();
+        try {
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            String strSQL = "SELECT n_descripcion, n_direccion FROM Servicio WHERE servicio.k_numeroDeServicio = ? "
+                    + "JOIN Actividad ON Servicio.k_numeroDeServicio = Actividad.k_numeroDeServicio";
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setLong(1, k_numeroDeServicio);
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                Actividad actividad = new Actividad();
+                actividad.setN_descripcion("n_descripcion");
+                actividad.setN_direccion("n_direccion");
+                actividades.add(actividad);
+            }
+            ServiceLocator.getInstance().liberarConexion();
+        } catch (SQLException e) {
+            throw new RHException("ActividadDAO", e.getMessage());
+        } finally {
+            //finaliza la coneccion con la base de datos.
+            ServiceLocator.getInstance().liberarConexion();
+        }
+        return actividades;
+    }
 }

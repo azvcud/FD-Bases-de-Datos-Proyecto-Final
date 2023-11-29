@@ -32,6 +32,7 @@ public class MediadorAplicacion implements Aplicacion {
     private RegistroServicio registroServicio; //Oyente de vista RegServicios
     private MenuMensajero menuMensajero;
     private MenuSolicitante menuSolicitante;
+    private DetalleServicio detalleServicio;
     
     //Las vistas
     private VistaInicioSesion vistaInicioSesion;
@@ -40,6 +41,7 @@ public class MediadorAplicacion implements Aplicacion {
     private VistaRegistroServicio vistaRegistroServicio; //Vista para registro de servicios
     private MenuPrincipalMensajero vistaMenuMensajero;
     private MenuPrincipalSolicitante vistaMenuSolicitante;
+    private VistaDetalleServicio vistaDetalleServicio;
     
     //Gestores
     private MensajeroGestor gestorMensajero;
@@ -67,6 +69,7 @@ public class MediadorAplicacion implements Aplicacion {
         vistaRegistroServicio = new VistaRegistroServicio();
         vistaMenuMensajero = new MenuPrincipalMensajero();
         vistaMenuSolicitante = new MenuPrincipalSolicitante();
+        vistaDetalleServicio = new VistaDetalleServicio();
         
         //Instancias de los gestores
         gestorMensajero = new MensajeroGestor();
@@ -76,7 +79,6 @@ public class MediadorAplicacion implements Aplicacion {
         gestorTarifa = new TarifaGestor();
         gestorActividad = new ActividadGestor();
         gestorEstado = new EstadoGestor();
-        
         gestorJornada = new JornadaGestor();
         
         //Instancias de los oyentes
@@ -86,6 +88,7 @@ public class MediadorAplicacion implements Aplicacion {
         registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, gestorCiudad, gestorTarifa, gestorActividad, gestorEstado, this);  
         menuSolicitante = new MenuSolicitante(this, vistaMenuSolicitante, gestorServicio, gestorSolicitante);
         menuMensajero = new MenuMensajero(this, vistaMenuMensajero, gestorServicio, gestorMensajero);
+        detalleServicio = new DetalleServicio(vistaDetalleServicio, gestorSolicitante, gestorMensajero, this);
         
         iniciar();
     } 
