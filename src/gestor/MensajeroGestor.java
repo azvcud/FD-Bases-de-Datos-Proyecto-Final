@@ -86,7 +86,7 @@ public class MensajeroGestor {
     
     public Mensajero buscarMensajero(long k_numeroDocumento)throws RHException{
         Mensajero mensajero;
-        mensajero =mensajeroDAO.buscarMensajero(k_numeroDocumento);
+        mensajero = mensajeroDAO.buscarMensajero(k_numeroDocumento);
         return mensajero;
     }  
     

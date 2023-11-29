@@ -4,6 +4,8 @@
  */
 package negocio;
 
+import java.sql.Time;
+
 /**
  * Clase que encapsula los datos de la Jornada del empleado.
  * @author David
@@ -11,9 +13,9 @@ package negocio;
 public class Jornada {
     private int    k_jornada;
     private String n_diaServicio;
-    private String f_horaInicial;
-    private String f_horaFinal;
-    private int    k_numeroDocumento;
+    private Time   f_horaInicial;
+    private Time   f_horaFinal;
+    private long    k_numeroDocumento;
     private String k_tipoDocumento;
 
     public Jornada() {
@@ -35,29 +37,14 @@ public class Jornada {
         this.n_diaServicio = n_diaServicio;
     }
 
-    public String getF_horaInicial() {
-        return f_horaInicial;
-    }
-
-    public void setF_horaInicial(String f_horaInicial) {
-        this.f_horaInicial = f_horaInicial;
-    }
-
-    public String getF_horaFinal() {
-        return f_horaFinal;
-    }
-
-    public void setF_horaFinal(String f_horaFinal) {
-        this.f_horaFinal = f_horaFinal;
-    }
-
-    public int getK_numeroDocumento() {
+    public long getK_numeroDocumento() {
         return k_numeroDocumento;
     }
 
-    public void setK_numeroDocumento(int k_numeroDocumento) {
+    public void setK_numeroDocumento(long k_numeroDocumento) {
         this.k_numeroDocumento = k_numeroDocumento;
     }
+    
 
     public String getK_tipoDocumento() {
         return k_tipoDocumento;
@@ -66,7 +53,20 @@ public class Jornada {
     public void setK_tipoDocumento(String k_tipoDocumento) {
         this.k_tipoDocumento = k_tipoDocumento;
     }
-    
-    
-    
+
+    public Time getF_horaInicial() {
+        return f_horaInicial;
+    }
+
+    public void setF_horaInicial(Time f_horaInicial) {
+        this.f_horaInicial = f_horaInicial;
+    }
+
+    public Time getF_horaFinal() {
+        return f_horaFinal;
+    }
+
+    public void setF_horaFinal(Time f_horaFinal) {
+        this.f_horaFinal = f_horaFinal;
+    }
 }

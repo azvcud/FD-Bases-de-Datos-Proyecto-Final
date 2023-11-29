@@ -49,7 +49,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
         direccion = new javax.swing.JLabel();
         tfDireccion = new javax.swing.JTextField();
         btnRegistrarSolicitante = new javax.swing.JButton();
-        CancelarRS = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -122,7 +122,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
             }
         });
 
-        CancelarRS.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,7 +173,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(279, 279, 279)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CancelarRS)
+                            .addComponent(btnCancelar)
                             .addComponent(btnRegistrarSolicitante))))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
@@ -215,7 +215,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(btnRegistrarSolicitante)
                 .addGap(18, 18, 18)
-                .addComponent(CancelarRS)
+                .addComponent(btnCancelar)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -286,7 +286,7 @@ public class VistaRegistroSolicitante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelarRS;
+    public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnRegistrarSolicitante;
     public javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JLabel correoElectronico;

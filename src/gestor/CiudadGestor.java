@@ -51,6 +51,12 @@ public class CiudadGestor {
       // Registro de la Ciudad en la base de datos usando el objeto CiudadDAO
       ciudadDAO.registrarCiudad(ciudad);
     }
+     
+    public int obtenerTarifaPorTrayecto(int k_idciudad) throws RHException{
+        int tarifa=ciudadDAO.obtenerTarifaPorTrayecto(k_idciudad);
+        return tarifa;
+    }
+     
 
     // Getters y setter para acceder y modificar CiudadDAO y Ciudad 
     public CiudadDAO getCiudadDAO() {

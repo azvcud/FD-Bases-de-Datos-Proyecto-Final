@@ -30,16 +30,16 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         NombreSol = new javax.swing.JLabel();
         DocumentoSol = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        nombreSolicitante = new javax.swing.JLabel();
+        documentoSolicitante = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        AgregarServicio = new javax.swing.JButton();
+        btnAgregarServicio = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        CerrarSesion = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         SexoSol = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        sexo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,9 +49,9 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
 
         DocumentoSol.setText("Documento id:");
 
-        jLabel4.setText("LabelNombre");
+        nombreSolicitante.setText("LabelNombre");
 
-        jLabel5.setText("LabelDocumento");
+        documentoSolicitante.setText("LabelDocumento");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,25 +69,25 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
 
         jLabel6.setText("Servicios Solicitados");
 
-        AgregarServicio.setText("Agregar Servicio");
-        AgregarServicio.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarServicio.setText("Agregar Servicio");
+        btnAgregarServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarServicioActionPerformed(evt);
+                btnAgregarServicioActionPerformed(evt);
             }
         });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/usuario.jpg"))); // NOI18N
 
-        CerrarSesion.setText("Cerrar Sesión");
-        CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CerrarSesionActionPerformed(evt);
+                btnCerrarSesionActionPerformed(evt);
             }
         });
 
         SexoSol.setText("Sexo:");
 
-        jLabel9.setText("LabelSexo");
+        sexo.setText("LabelSexo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,15 +104,15 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
+                                    .addComponent(nombreSolicitante)
+                                    .addComponent(documentoSolicitante))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7)
                                 .addGap(65, 65, 65))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addComponent(sexo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(CerrarSesion)
+                                .addComponent(btnCerrarSesion)
                                 .addGap(53, 53, 53))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -131,7 +131,7 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
                 .addGap(0, 20, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AgregarServicio)
+                .addComponent(btnAgregarServicio)
                 .addGap(186, 186, 186))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,25 +144,25 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NombreSol)
-                            .addComponent(jLabel4))
+                            .addComponent(nombreSolicitante))
                         .addGap(89, 89, 89)
                         .addComponent(jLabel6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel5)
+                                .addComponent(documentoSolicitante)
                                 .addComponent(DocumentoSol))
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CerrarSesion)
+                            .addComponent(btnCerrarSesion)
                             .addComponent(SexoSol)
-                            .addComponent(jLabel9))))
+                            .addComponent(sexo))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(AgregarServicio)
+                .addComponent(btnAgregarServicio)
                 .addGap(25, 25, 25))
         );
 
@@ -182,13 +182,13 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarServicioActionPerformed
+    private void btnAgregarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarServicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AgregarServicioActionPerformed
+    }//GEN-LAST:event_btnAgregarServicioActionPerformed
 
-    private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CerrarSesionActionPerformed
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,19 +226,19 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarServicio;
-    private javax.swing.JButton CerrarSesion;
     private javax.swing.JLabel DocumentoSol;
     private javax.swing.JLabel NombreSol;
     private javax.swing.JLabel SexoSol;
+    public javax.swing.JButton btnAgregarServicio;
+    public javax.swing.JButton btnCerrarSesion;
+    public javax.swing.JLabel documentoSolicitante;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    public javax.swing.JLabel nombreSolicitante;
+    public javax.swing.JLabel sexo;
     // End of variables declaration//GEN-END:variables
 }

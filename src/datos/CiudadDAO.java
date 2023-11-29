@@ -59,5 +59,27 @@ public class CiudadDAO {
       
     }
     
+    public int obtenerTarifaPorTrayecto(int k_idciudad) throws RHException{
+        int tarifa=0;
+        try {
+            String strSQL = "SELECT v_tarifaPorTrayecto FROM ciudad WHERE k_idciudad = ?";
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setInt(1, k_idciudad);
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                tarifa=rs.getInt(1);
+            }
+           
+            return tarifa;
+        } catch (SQLException e) {
+            //captura y lanza la excepción RHException.
+            throw new RHException("CiudadDAO", e.getMessage());
+        } finally {
+            //finaliza la coneccion con la base de datos.
+            ServiceLocator.getInstance().liberarConexion();
+        }
+    }
+    
      
  }

@@ -4,12 +4,15 @@
  */
 package aplicacion;
 
+import gestor.JornadaGestor;
 import gestor.MensajeroGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import presentacion.VistaRegistroMensajero;
 import util.RHException;
 
@@ -26,6 +29,9 @@ public class RegistroMensajero implements ActionListener {
     private Aplicacion mediador;                //Instancia del mediado de la aplicación
     private VistaRegistroMensajero vista;       //Vista par el registro de Mensajeros
     private MensajeroGestor gestorMensajero;    // Gestor de mensajeros
+    private JornadaGestor gestorJornada;
+    
+    private DefaultTableModel modelo;
  
     /**
      * Constructor de la clase RegistroMensajero.
@@ -33,12 +39,21 @@ public class RegistroMensajero implements ActionListener {
      * @param gestorMensajero   Gestor encargado de operaciones relacionadas con mensajeros.
      * @param mediador          Aplicacion que actúa como mediador para la interacción entre componentes.
      */
-    public RegistroMensajero(VistaRegistroMensajero vista, MensajeroGestor gestorMensajero, Aplicacion mediador) {
+    public RegistroMensajero(VistaRegistroMensajero vista, MensajeroGestor gestorMensajero, JornadaGestor gestorJornada, Aplicacion mediador) {
         this.vista = vista;
         this.gestorMensajero = gestorMensajero;
+        this.gestorJornada = gestorJornada;
         this.mediador = mediador;
         
         this.vista.btnRegistrarMensajero.addActionListener(this);
+        this.vista.btnCancelar.addActionListener(this);
+        this.vista.btnAgregarJornada.addActionListener(this);
+        
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Día de servicio");
+        modelo.addColumn("Hora inicial");
+        modelo.addColumn("Hora final");
+        vista.tablaJornada.setModel(modelo);
     }
 
     /**
@@ -50,6 +65,8 @@ public class RegistroMensajero implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnRegistrarMensajero) {
+            int numero_Filas = vista.tablaJornada.getRowCount();
+            
             try{
                 long numId = Integer.parseInt(vista.tfNumeroDocumento.getText());
                 String tipoId = (String)vista.cbTipoDocumento.getSelectedItem();
@@ -76,7 +93,8 @@ public class RegistroMensajero implements ActionListener {
                 String matricula = vista.tfMatricula.getText();
                 String marca = vista.tfMarca.getText();
 
-
+                vista.tablaJornada.clearSelection();
+                
                 try {
                     gestorMensajero.registrarMensajero(numId,
                             tipoId,
@@ -94,16 +112,36 @@ public class RegistroMensajero implements ActionListener {
                             medTransporte,
                             matricula,
                             marca);
+                    
+                    for(int i = 0; i < numero_Filas; i++) {
+                        gestorJornada.registrarJornada(
+                                i + 1, 
+                                (String) vista.tablaJornada.getValueAt(i, 0),
+                                (String) vista.tablaJornada.getValueAt(i,1),
+                                (String) vista.tablaJornada.getValueAt(i,2),
+                                numId,
+                                tipoId
+                        );
+                    }
+                    
                     JOptionPane.showMessageDialog(vista, "Mensajero registrado correctamente", "Registro mensajero", JOptionPane.INFORMATION_MESSAGE);
                     mediador.notificar(this, "Regresar a inicio");
                 } catch (RHException ex) {
                     JOptionPane.showMessageDialog(vista, ex.getMessage(), "Error al registrar", JOptionPane.ERROR_MESSAGE);
+                } catch (ParseException ex) {
+                    Logger.getLogger(RegistroMensajero.class.getName()).log(Level.SEVERE, null, ex);
                 } 
             }
             catch(NumberFormatException nEx){
                 JOptionPane.showMessageDialog(vista, "Ni Telefono ni Número de documento\npueden ser valores nulos.","Error al registrar", JOptionPane.ERROR_MESSAGE);
             }
         }   
+        
+        if(e.getSource() == vista.btnCancelar) { mediador.notificar(this, "Regresar a inicio"); }
+        if(e.getSource() == vista.btnAgregarJornada) {
+            modelo.addRow(new Object[]{"","",""});
+            vista.tablaJornada.setModel(modelo);
+        }
     }
     
     /**
