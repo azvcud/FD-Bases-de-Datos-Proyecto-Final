@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 import negocio.Servicio;
@@ -95,6 +96,9 @@ public class ServicioDAO {
             ServiceLocator.getInstance().liberarConexion();
         } catch (SQLException e) {
             throw new RHException("ServicioDAO", e.getMessage());
+        } finally {
+            //finaliza la coneccion con la base de datos.
+            ServiceLocator.getInstance().liberarConexion();
         }
         return servicios;
     }
@@ -153,4 +157,74 @@ public class ServicioDAO {
                       ServiceLocator.getInstance().liberarConexion();
                  }
          } 
+}
+       
+    public Object[] servicioSolicitante(long k_numeroDeServicio) throws RHException {
+        Object[] objetoConsulta;
+        try {
+            String strSQL = "SELECT Solicitante.k_numeroDocumento, n_primerNombre,"
+                    + " f_horaDeInicio, Servicio.f_fecha, n_tipoDeServicio, n_estadoRegistrado, v_costoTotal "
+                    + "FROM Servicio WHERE Servicio.k_numeroDeServicio = ? "
+                    + "JOIN Solicitante ON Solicitante.k_numeroDocumento = Servicio.k_numeroDeServicio "
+                    + "JOIN Estado ON Estado.k_numeroDeServicio = Servicio.k_numeroDeServicio";
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setLong(1, k_numeroDeServicio);
+            ResultSet rs = prepStmt.executeQuery();
+            
+            objetoConsulta = new Object[7];
+            objetoConsulta[0] = rs.getLong("k_numeroDocumento");
+            objetoConsulta[1] = rs.getString("n_primerNombre");
+            
+            LocalTime tiempoLocal = rs.getTime("f_horaDeInicio").toLocalTime();
+            String horaInicio = tiempoLocal.toString();
+            objetoConsulta[2] = horaInicio;
+            
+            // Convertir el Date a String antes de asignarlo al objeto Servicio
+            Date fecha = rs.getDate("f_fecha");
+            String fechaStr = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
+            objetoConsulta[3] = fechaStr;
+            
+            objetoConsulta[4] = rs.getString("n_tipoDeServicio");
+            objetoConsulta[5] = rs.getString("n_estadoRegistrado");
+            objetoConsulta[6] = rs.getLong("v_costoTotal");
+            
+        } catch (SQLException e) {
+            //captura y lanza la excepción RHException.
+            throw new RHException("SolicitanteDAO", e.getMessage());
+        } finally {
+            //finaliza la coneccion con la base de datos.
+            ServiceLocator.getInstance().liberarConexion();
+        }
+        
+        return objetoConsulta;
+    }
+    
+    public Object[] mensajeroSolicitante(long k_numeroDeServicio) throws RHException {
+        Object[] objetoConsulta;
+        try {
+            String strSQL = "SELECT Mensajero.n_primerNombre, n_medioDeTransporte, n_matricula"
+                    + " FROM Servicio WHERE Servicio.k_numeroDeServicio = ? "
+                    + "JOIN Solicitante ON Solicitante.k_numeroDocumento = Servicio.k_numeroDocumentoS "
+                    + "JOIN Mensajero ON Mensajero.k_numeroDocumento = Servicio.k_numeroDocumentoM";
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setLong(1, k_numeroDeServicio);
+            ResultSet rs = prepStmt.executeQuery();
+            
+            objetoConsulta = new Object[3];
+            objetoConsulta[0] = rs.getString("n_primerNombre");
+            objetoConsulta[1] = rs.getString("n_medioDeTransporte");
+            objetoConsulta[2] = rs.getString("n_matricula");
+            
+        } catch (SQLException e) {
+            //captura y lanza la excepción RHException.
+            throw new RHException("SolicitanteDAO", e.getMessage());
+        } finally {
+            //finaliza la coneccion con la base de datos.
+            ServiceLocator.getInstance().liberarConexion();
+        }
+        
+        return objetoConsulta;
+    }
 }

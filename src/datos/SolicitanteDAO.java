@@ -174,6 +174,7 @@ public class SolicitanteDAO {
                 //Si el empleado no existe, lanza una excepción indicando que no se puede actualizar el salario.
                  throw new RHException("SolicitanteDAO", "No existe solicitante ");
             }
-    } 
+    }
+
 }     
 
