@@ -14,4 +14,6 @@ public interface Aplicacion {
     public abstract void notificar(Object aplicacion, String mensaje);
     public abstract void setIdSesion(long idSesion);
     public abstract long getIdSesion();
+    public abstract void setIdServicio(long idServicio);
+    public abstract long getIdServicio();
 }

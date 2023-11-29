@@ -53,22 +53,22 @@ public class ActividadDAO {
       }
     }
     
-    public List<Actividad> actividadPorServicios(long k_numeroDeServicio) throws RHException {
-        List<Actividad> actividades = new ArrayList<>();
+    public ArrayList<Actividad> actividadPorServicios(long k_numeroDeServicio) throws RHException {
+        ArrayList<Actividad> actividades = new ArrayList<>();
         try {
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
-            String strSQL = "SELECT n_descripcion, n_direccion FROM Servicio WHERE servicio.k_numeroDeServicio = ? "
-                    + "JOIN Actividad ON Servicio.k_numeroDeServicio = Actividad.k_numeroDeServicio";
+            String strSQL = "SELECT n_descripcion, n_direccion FROM Servicio "
+                    + "JOIN Actividad ON Servicio.k_numeroDeServicio = Actividad.k_numeroDeServicio "
+                    + "WHERE servicio.k_numeroDeServicio = ? ";
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setLong(1, k_numeroDeServicio);
             ResultSet rs = prepStmt.executeQuery();
             while (rs.next()) {
                 Actividad actividad = new Actividad();
-                actividad.setN_descripcion("n_descripcion");
-                actividad.setN_direccion("n_direccion");
+                actividad.setN_descripcion(rs.getString("n_descripcion"));
+                actividad.setN_direccion(rs.getString("n_direccion"));
                 actividades.add(actividad);
             }
-            ServiceLocator.getInstance().liberarConexion();
         } catch (SQLException e) {
             throw new RHException("ActividadDAO", e.getMessage());
         } finally {

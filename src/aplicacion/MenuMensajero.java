@@ -8,9 +8,14 @@ import gestor.MensajeroGestor;
 import gestor.ServicioGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import negocio.Mensajero;
 import negocio.Servicio;
@@ -21,7 +26,7 @@ import util.RHException;
  *
  * @author amirz
  */
-public class MenuMensajero implements ActionListener {
+public class MenuMensajero implements ActionListener, MouseListener {
     private Aplicacion mediador;
     private MenuPrincipalMensajero vistaMenu;
     
@@ -39,6 +44,8 @@ public class MenuMensajero implements ActionListener {
         
         this.vistaMenu.btnCerrarSesion.addActionListener(this);
         this.vistaMenu.btnAceptarServicio.addActionListener(this);
+        
+        this.vistaMenu.tablaMensajero.addMouseListener(this);
     }
 
     public void cargarInformacion() throws RHException {
@@ -66,7 +73,7 @@ public class MenuMensajero implements ActionListener {
         
         ;
         
-        vistaMenu.jTable1.setModel(modelo1);
+        vistaMenu.tablaMensajero.setModel(modelo1);
         
         for(int i=0;i<servicios.size();i++){
             modelo1.addRow(new Object[]{servicios.get(i).getK_numeroDeServicio(),servicios.get(i).getN_tipoDeServicio()
@@ -79,22 +86,54 @@ public class MenuMensajero implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnCerrarSesion) { mediador.notificar(this, "Cierre de sesión");}
         if(e.getSource() == vistaMenu.btnAceptarServicio) { 
-           System.out.print("pepe");
-           int fila= vistaMenu.jTable1.getSelectedRow();
-           System.out.print(fila);
+           int fila= vistaMenu.tablaMensajero.getSelectedRow();
            try {  
            gestorServicio.añadirMensajero(servicios.get(fila).getK_numeroDeServicio(), 
                  sesionMensajero.getK_numeroDocumento(), sesionMensajero.getK_tipoDocumento());
+                 mediador.notificar(this, "Servicio aceptado");
             } catch (RHException f) {
              JOptionPane.showMessageDialog(null, f, "Error", JOptionPane.ERROR_MESSAGE);
               
            }   
          }
     }
-    
-    
+  
     public void desplegar(boolean estado) {
         if(estado)  { vistaMenu.setVisible(estado); }
         else        { vistaMenu.dispose(); }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        int columnaSeleccionada = vistaMenu.tablaMensajero.getSelectedColumn();
+        
+        if(columnaSeleccionada == 0) {
+            int filaSeleccionada = vistaMenu.tablaMensajero.rowAtPoint(e.getPoint());
+            Object textoCelda = vistaMenu.tablaMensajero.getValueAt(filaSeleccionada, columnaSeleccionada);
+            
+            long valorCelda = Long.valueOf(textoCelda.toString());
+            mediador.setIdServicio(valorCelda);
+            mediador.notificar(this, "Ver detalles");
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+      
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+       
     }
 }

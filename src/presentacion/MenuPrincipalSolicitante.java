@@ -33,7 +33,7 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
         nombreSolicitante = new javax.swing.JLabel();
         documentoSolicitante = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaSolicitante = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         btnAgregarServicio = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -53,7 +53,7 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
 
         documentoSolicitante.setText("LabelDocumento");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaSolicitante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -64,8 +64,8 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
 
             }
         ));
-        jTable1.setName(""); // NOI18N
-        jScrollPane1.setViewportView(jTable1);
+        tablaSolicitante.setName(""); // NOI18N
+        jScrollPane1.setViewportView(tablaSolicitante);
 
         jLabel6.setText("Servicios Solicitados");
 
@@ -237,8 +237,8 @@ public class MenuPrincipalSolicitante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
     public javax.swing.JLabel nombreSolicitante;
     public javax.swing.JLabel sexo;
+    public javax.swing.JTable tablaSolicitante;
     // End of variables declaration//GEN-END:variables
 }

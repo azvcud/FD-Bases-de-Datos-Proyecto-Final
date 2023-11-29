@@ -5,6 +5,7 @@
 package gestor;
 
 import datos.ActividadDAO;
+import java.util.ArrayList;
 import negocio.Actividad;
 import util.RHException;
 
@@ -29,5 +30,11 @@ public class ActividadGestor {
         actividad.setK_numeroDeServicio(k_numeroDeServicio);
         
         actividadDAO.registrarActividad(actividad);
+    }
+    
+    public ArrayList<Actividad> listaActividades(long k_numeroDeServicio) throws RHException {
+        ArrayList<Actividad> listaActividades = new ArrayList<>();
+        listaActividades = actividadDAO.actividadPorServicios(k_numeroDeServicio);
+        return listaActividades;
     }
 }

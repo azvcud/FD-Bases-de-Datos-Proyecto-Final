@@ -55,6 +55,7 @@ public class MediadorAplicacion implements Aplicacion {
     
     //Variables de utilidad
     private long idSesion;
+    private long idServicio;
     
     /**
      * Construtor de la clase MediadorAplicación
@@ -88,7 +89,7 @@ public class MediadorAplicacion implements Aplicacion {
         registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, gestorCiudad, gestorTarifa, gestorActividad, gestorEstado, this);  
         menuSolicitante = new MenuSolicitante(this, vistaMenuSolicitante, gestorServicio, gestorSolicitante);
         menuMensajero = new MenuMensajero(this, vistaMenuMensajero, gestorServicio, gestorMensajero);
-        detalleServicio = new DetalleServicio(vistaDetalleServicio, gestorSolicitante, gestorMensajero, this);
+        detalleServicio = new DetalleServicio(vistaDetalleServicio, gestorServicio, gestorActividad, this);
         
         iniciar();
     } 
@@ -172,6 +173,13 @@ public class MediadorAplicacion implements Aplicacion {
                     break;
                 case "Salir registro":
                     registroServicio.desplegar(false);
+                    {
+                        try {
+                            menuSolicitante.cargarServicios();
+                        } catch (RHException ex) {
+                            Logger.getLogger(MediadorAplicacion.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
                     menuSolicitante.desplegar(true);
                     break;
                 default:
@@ -185,6 +193,20 @@ public class MediadorAplicacion implements Aplicacion {
                     setIdSesion(-1);
                     inicioSesion.desplegar(true);
                     break;
+                case "Servicio aceptado":
+                    JOptionPane.showMessageDialog(null, "Servicio aceptado correctamente-", "Servicio para mensajero.", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case "Ver detalles":
+                    {
+                        try {
+                            detalleServicio.cargarInformacion();
+                        } catch (RHException ex) {
+                            Logger.getLogger(MediadorAplicacion.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    detalleServicio.desplegar(true);
+                    break;
+
                 default:
                     break;
             }
@@ -200,6 +222,16 @@ public class MediadorAplicacion implements Aplicacion {
                     menuSolicitante.desplegar(false);
                     registroServicio.desplegar(true);
                     break;
+                case "Ver detalles":
+                    {
+                        try {
+                            detalleServicio.cargarInformacion();
+                        } catch (RHException ex) {
+                            Logger.getLogger(MediadorAplicacion.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    detalleServicio.desplegar(true);
+                    break;
                 default:
                     break;
             }
@@ -214,5 +246,15 @@ public class MediadorAplicacion implements Aplicacion {
     @Override
     public void setIdSesion(long idSesion) {
         this.idSesion = idSesion;
+    }
+
+    @Override
+    public long getIdServicio() {
+        return idServicio;
+    }
+
+    @Override
+    public void setIdServicio(long idServicio) {
+        this.idServicio = idServicio;
     }
 }

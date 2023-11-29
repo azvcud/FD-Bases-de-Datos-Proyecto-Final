@@ -34,7 +34,7 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnCerrarSesion = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaMensajero = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -64,7 +64,7 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaMensajero.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -75,7 +75,7 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaMensajero);
 
         jLabel6.setText("SERVICIOS DISPONIBLES");
 
@@ -274,10 +274,10 @@ public class MenuPrincipalMensajero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
     public javax.swing.JLabel medioServicio;
     public javax.swing.JLabel medioTransporte;
     public javax.swing.JLabel nombreMensajero;
     public javax.swing.JLabel sexo;
+    public javax.swing.JTable tablaMensajero;
     // End of variables declaration//GEN-END:variables
 }

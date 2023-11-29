@@ -47,7 +47,7 @@ public class VistaDetalleServicio extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         fechaServicio = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaDetalles = new javax.swing.JTable();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         estadoServicio = new javax.swing.JLabel();
@@ -92,18 +92,15 @@ public class VistaDetalleServicio extends javax.swing.JFrame {
 
         fechaServicio.setText("Fserv");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaDetalles);
 
         jLabel20.setText("Actividades");
 
@@ -287,11 +284,11 @@ public class VistaDetalleServicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     public javax.swing.JLabel medioTransporte;
     public javax.swing.JLabel nombreMensajero;
     public javax.swing.JLabel nombreSolicitante;
     public javax.swing.JLabel placa;
+    public javax.swing.JTable tablaDetalles;
     public javax.swing.JLabel tipoServicio;
     // End of variables declaration//GEN-END:variables
 }

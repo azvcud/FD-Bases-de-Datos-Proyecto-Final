@@ -90,6 +90,20 @@ public class ServicioGestor {
     public void añadirMensajero(int k_numerodeservicio, long k_numeroDocumentoM, String k_tipoDocumentom) throws RHException {
         servicioDAO.añadirMensajero(k_numerodeservicio, k_numeroDocumentoM, k_tipoDocumentom);
     }
+    
+    public ArrayList<Object> servicioSolicitante(long k_numeroDeServicio) throws RHException {
+        ArrayList<Object> valoresConsulta = new ArrayList<>();
+        valoresConsulta = servicioDAO.servicioSolicitante(k_numeroDeServicio);
+        return valoresConsulta;
+    }
+    
+    public Object[] mensajeroSolicitante(long k_numeroDeServicio) throws RHException {
+        Object[] valoresConsulta = new Object[3];
+        valoresConsulta = servicioDAO.mensajeroSolicitante(k_numeroDeServicio);
+        return valoresConsulta;
+    }
+    
+    
     //Getters y setter para acceder y modificar ServicioDAO y Servicio
     public ServicioDAO getServicioDAO() {
         return servicioDAO;

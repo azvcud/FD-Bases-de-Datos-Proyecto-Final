@@ -40,6 +40,7 @@ public class RegistroSolicitante implements ActionListener {
         
         this.vista.btnRegistrarSolicitante.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
+        
     }
 
     /**

@@ -93,7 +93,6 @@ public class ServicioDAO {
                 servicio.setK_numeroDocumentoS(rs.getInt("k_numerodocumentos"));
                 servicios.add(servicio);
             }
-            ServiceLocator.getInstance().liberarConexion();
         } catch (SQLException e) {
             throw new RHException("ServicioDAO", e.getMessage());
         } finally {
@@ -101,6 +100,7 @@ public class ServicioDAO {
             ServiceLocator.getInstance().liberarConexion();
         }
         return servicios;
+        
     }
    
     public List<Servicio> buscarServiciosPorDocumentoMensajero(String n_tipodeservicio) throws RHException {
@@ -137,7 +137,7 @@ public class ServicioDAO {
            try{
                 //Actualiza el mensajero del empleado en la base de datos.
 
-                String strSQL = "UPDATE servicio SET k_numerodocumentom =?, k_tipodocumentom =? WHERE k_numerodeservicio = ?";
+                String strSQL = "UPDATE servicio SET k_numerodocumentom = ?, k_tipodocumentom = ? WHERE k_numerodeservicio = ?";
                 Connection conexion = ServiceLocator.getInstance().tomarConexion();
                 PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
                 prepStmt.setLong(3, k_numerodeservicio);
@@ -156,38 +156,38 @@ public class ServicioDAO {
                     //finaliza la coneccion con la base de datos.
                       ServiceLocator.getInstance().liberarConexion();
                  }
-         } 
-}
+    } 
        
-    public Object[] servicioSolicitante(long k_numeroDeServicio) throws RHException {
-        Object[] objetoConsulta;
+    public ArrayList<Object> servicioSolicitante(long k_numeroDeServicio) throws RHException {
+        ArrayList<Object> listaObjetos = new ArrayList<>();
         try {
             String strSQL = "SELECT Solicitante.k_numeroDocumento, n_primerNombre,"
                     + " f_horaDeInicio, Servicio.f_fecha, n_tipoDeServicio, n_estadoRegistrado, v_costoTotal "
-                    + "FROM Servicio WHERE Servicio.k_numeroDeServicio = ? "
-                    + "JOIN Solicitante ON Solicitante.k_numeroDocumento = Servicio.k_numeroDeServicio "
-                    + "JOIN Estado ON Estado.k_numeroDeServicio = Servicio.k_numeroDeServicio";
+                    + "FROM Servicio "
+                    + "JOIN Solicitante ON Solicitante.k_numeroDocumento = Servicio.k_numeroDocumentoS "
+                    + "JOIN Estado ON Estado.k_numeroDeServicio = Servicio.k_numeroDeServicio "
+                    + "WHERE Servicio.k_numeroDeServicio = ? ";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setLong(1, k_numeroDeServicio);
             ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                listaObjetos.add(rs.getLong("k_numeroDocumento"));
+                listaObjetos.add(rs.getString("n_primerNombre"));
+ 
+                LocalTime tiempoLocal = rs.getTime("f_horaDeInicio").toLocalTime();
+                String horaInicio = tiempoLocal.toString();
+                listaObjetos.add(horaInicio);
             
-            objetoConsulta = new Object[7];
-            objetoConsulta[0] = rs.getLong("k_numeroDocumento");
-            objetoConsulta[1] = rs.getString("n_primerNombre");
+                // Convertir el Date a String antes de asignarlo al objeto Servicio
+                Date fecha = rs.getDate("f_fecha");
+                String fechaStr = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
+                listaObjetos.add(fechaStr);
             
-            LocalTime tiempoLocal = rs.getTime("f_horaDeInicio").toLocalTime();
-            String horaInicio = tiempoLocal.toString();
-            objetoConsulta[2] = horaInicio;
-            
-            // Convertir el Date a String antes de asignarlo al objeto Servicio
-            Date fecha = rs.getDate("f_fecha");
-            String fechaStr = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
-            objetoConsulta[3] = fechaStr;
-            
-            objetoConsulta[4] = rs.getString("n_tipoDeServicio");
-            objetoConsulta[5] = rs.getString("n_estadoRegistrado");
-            objetoConsulta[6] = rs.getLong("v_costoTotal");
+                listaObjetos.add(rs.getString("n_tipoDeServicio"));
+                listaObjetos.add(rs.getString("n_estadoRegistrado"));
+                listaObjetos.add(rs.getLong("v_costoTotal"));
+            }
             
         } catch (SQLException e) {
             //captura y lanza la excepción RHException.
@@ -197,25 +197,27 @@ public class ServicioDAO {
             ServiceLocator.getInstance().liberarConexion();
         }
         
-        return objetoConsulta;
+        return listaObjetos;
     }
     
     public Object[] mensajeroSolicitante(long k_numeroDeServicio) throws RHException {
-        Object[] objetoConsulta;
+        Object[] objetoConsulta = new Object[3];
         try {
             String strSQL = "SELECT Mensajero.n_primerNombre, n_medioDeTransporte, n_matricula"
-                    + " FROM Servicio WHERE Servicio.k_numeroDeServicio = ? "
+                    + " FROM Servicio "
                     + "JOIN Solicitante ON Solicitante.k_numeroDocumento = Servicio.k_numeroDocumentoS "
-                    + "JOIN Mensajero ON Mensajero.k_numeroDocumento = Servicio.k_numeroDocumentoM";
+                    + "JOIN Mensajero ON Mensajero.k_numeroDocumento = Servicio.k_numeroDocumentoM "
+                    + "WHERE Servicio.k_numeroDeServicio = ? ";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setLong(1, k_numeroDeServicio);
             ResultSet rs = prepStmt.executeQuery();
             
-            objetoConsulta = new Object[3];
-            objetoConsulta[0] = rs.getString("n_primerNombre");
-            objetoConsulta[1] = rs.getString("n_medioDeTransporte");
-            objetoConsulta[2] = rs.getString("n_matricula");
+            while(rs.next()) {
+                objetoConsulta[0] = rs.getString("n_primerNombre");
+                objetoConsulta[1] = rs.getString("n_medioDeTransporte");
+                objetoConsulta[2] = rs.getString("n_matricula");
+            }
             
         } catch (SQLException e) {
             //captura y lanza la excepción RHException.
