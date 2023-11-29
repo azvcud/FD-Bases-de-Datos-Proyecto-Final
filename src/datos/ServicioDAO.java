@@ -36,7 +36,7 @@ public class ServicioDAO {
       try {
         //Prepara la insercion de un nuevo Servicio en la base de datos      
         String strSQL = "INSERT INTO servicio (k_numeroDeServicio, n_tipoDeServicio, f_horaDeInicio, f_fecha,"
-                + " q_cantidadDeTrayectos, k_idCiudad,k_numeroDocumentoS, k_tipoDocumentoS ) VALUES(?,?,?,?,?,?,?,?)";
+                + " q_cantidadDeTrayectos, v_costoTotal, k_idCiudad, k_numeroDocumentoS, k_tipoDocumentoS) VALUES(?,?,?,?,?,?,?,?,?)";
         Connection conexion = ServiceLocator.getInstance().tomarConexion();
         PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
         // Establece los parametros para insertar el Servicio
@@ -44,11 +44,12 @@ public class ServicioDAO {
         prepStmt.setString(2, servicio.getN_tipoDeServicio());
         Date FyH = new Date();
         prepStmt.setTime(3, new Time(FyH.getHours(),FyH.getMinutes(),FyH.getSeconds())); 
-        prepStmt.setDate(4, new java.sql.Date(FyH.getYear(),FyH.getMonth(),FyH.getDay())); 
-        prepStmt.setDouble(5, servicio.getQ_calificacion()); 
-        prepStmt.setInt(6, servicio.getK_idCiudad());
-        prepStmt.setInt(7, servicio.getK_numeroDocumentoS());
-        prepStmt.setString(8, servicio.getK_tipoDocumentoS());
+        prepStmt.setDate(4, new java.sql.Date(FyH.getYear(),FyH.getMonth(),FyH.getDay()));
+        prepStmt.setInt(5, servicio.getQ_cantidadDeTrayectos());
+        prepStmt.setFloat(6, servicio.getV_costoTotal());
+        prepStmt.setInt(7, servicio.getK_idCiudad());
+        prepStmt.setInt(8, servicio.getK_numeroDocumentoS());
+        prepStmt.setString(9, servicio.getK_tipoDocumentoS());
        
         // Ejecuta el registro del Servicio y realiza el commit en la base de datos
         prepStmt.executeUpdate();

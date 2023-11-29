@@ -49,8 +49,8 @@ public class ServicioGestor {
      * @param k_tipoDocumentoS      Tipo de Documento del Solicitante del Servicio.
      * @throws RHException          Excepción en caso de que ocurra un error al momento de registrar el Servicio.
      */
-     public void registrarServicio(int k_numeroDeServicio,String n_tipoDeServicio, 
-             int q_cantidadDeTrayectos, int k_idCiudad, int k_numeroDocumentoS, String k_tipoDocumentoS ) throws RHException {
+     public void registrarServicio(int k_numeroDeServicio, String n_tipoDeServicio, 
+             int q_cantidadDeTrayectos, float v_costoTotal, int k_idCiudad, int k_numeroDocumentoS, String k_tipoDocumentoS ) throws RHException {
       // Crea un objeto Servicio con los datos proporcionados
       servicio = new Servicio();
       
@@ -59,6 +59,7 @@ public class ServicioGestor {
       servicio.setK_numeroDeServicio(k_numeroDeServicio);
       servicio.setN_tipoDeServicio(n_tipoDeServicio);
       servicio.setQ_cantidadDeTrayectos(q_cantidadDeTrayectos);
+      servicio.setV_costoTotal(v_costoTotal);
       servicio.setK_idCiudad(k_idCiudad);
       servicio.setK_numeroDocumentoS(k_numeroDocumentoS);        
       servicio.setK_tipoDocumentoS(k_tipoDocumentoS);

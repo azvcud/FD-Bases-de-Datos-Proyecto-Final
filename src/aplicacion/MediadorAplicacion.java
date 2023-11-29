@@ -4,9 +4,13 @@
  */
 package aplicacion;
 
+import gestor.ActividadGestor;
+import gestor.CiudadGestor;
 import gestor.MensajeroGestor;
 import gestor.ServicioGestor;
 import gestor.SolicitanteGestor;
+import gestor.TarifaGestor;
+import javax.swing.JOptionPane;
 import presentacion.*;
 
 /**
@@ -32,6 +36,9 @@ public class MediadorAplicacion implements Aplicacion {
     private MensajeroGestor gestorMensajero;
     private SolicitanteGestor gestorSolicitante;
     private ServicioGestor gestorServicio; //Gestor de servicios
+    private CiudadGestor gestorCiudad;
+    private TarifaGestor gestorTarifa;
+    private ActividadGestor gestorActividad;
     
     /**
      * Construtor de la clase MediadorAplicación
@@ -48,13 +55,16 @@ public class MediadorAplicacion implements Aplicacion {
         gestorMensajero = new MensajeroGestor();
         gestorSolicitante = new SolicitanteGestor();
         gestorServicio = new ServicioGestor();
+        gestorCiudad = new CiudadGestor();
+        gestorTarifa = new TarifaGestor();
+        gestorActividad = new ActividadGestor();
         
         
         //Instancias de los oyentes
         inicioSesion = new InicioSesion(vistaInicioSesion, gestorSolicitante, gestorMensajero, this);
         registroMensajero = new RegistroMensajero(vistaRegistroMensajero, gestorMensajero, this);
         registroSolicitante = new RegistroSolicitante(vistaRegistroSolicitante, gestorSolicitante, this);
-        registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, this);  
+        registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, gestorCiudad, gestorTarifa, gestorActividad, this);  
         
         iniciar();
     } 
@@ -91,7 +101,8 @@ public class MediadorAplicacion implements Aplicacion {
                 default:
                     break;
             }
-        }else if(aplicacion instanceof RegistroMensajero){
+        } 
+        if(aplicacion instanceof RegistroMensajero){
             switch(mensaje) {
                 case "Regresar a inicio":
                     registroMensajero.desplegar(false);
@@ -100,13 +111,21 @@ public class MediadorAplicacion implements Aplicacion {
                 default:
                     break;
             }
-        }else if(aplicacion instanceof RegistroSolicitante){
+        }
+        if(aplicacion instanceof RegistroSolicitante){
             switch(mensaje) {
                 case "Regresar a inicio":
                     registroSolicitante.desplegar(false);
                     inicioSesion.desplegar(true);
                     break;
                 default:
+                    break;
+            }
+        }
+        if(aplicacion instanceof RegistroServicio) {
+            switch(mensaje) {
+                case "Servicio registrado":
+                    JOptionPane.showMessageDialog(null, "Servicio registrado correctamente", "Registro servicio", JOptionPane.INFORMATION_MESSAGE);
                     break;
             }
         }
