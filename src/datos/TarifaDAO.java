@@ -61,4 +61,58 @@ public class TarifaDAO {
       
     }
     
+    public int regresarTarifaPorCiudad(int k_idCiudad, String tarifa) throws RHException {
+        int valorTarifa = 0;
+      try {
+        String tipoTarifa = "";
+        switch (tarifa){
+            case "Envio documento": {
+                tipoTarifa = "v_tarEnvioDocumento";
+                break;
+            }
+            case "Paquete pequeno": {
+                tipoTarifa = "v_tarEnPaqPequeno";
+                break;
+            }
+            case "Paquete mediano": {
+                tipoTarifa = "v_tarEnPaqMediano";
+                break;
+            }
+            case "Paquete grande": {
+                tipoTarifa = "v_tarEnPaqGrande";
+                break;
+            }
+            case "Pagar factura": {
+                tipoTarifa = "v_tarPagoFactura";
+                break;
+            }
+        }
+        //Prepara la inserción de una Tarifa en la base de datos        
+        String strSQL = "SELECT+"+tipoTarifa+" FROM tarifa WHERE k_idCiudad = ?";
+        Connection conexion = ServiceLocator.getInstance().tomarConexion();
+        PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+        // Establece los parametros para insertar la inserción de la Tarifa en la base de datos.
+        prepStmt.setInt(1, k_idCiudad);  
+
+        // Ejecuta la inserción de la nueva tarifa y el commit en la base de datos.
+        ResultSet resulset = prepStmt.executeQuery();
+        
+        if (resulset.next()){
+            return resulset.getInt(tipoTarifa);
+        }
+        
+        prepStmt.close();
+        ServiceLocator.getInstance().commit();
+      } catch (SQLException e) {
+          // En caso de ocurrir un error en la creación de la Tarifa realiza un rollback y lanza la excepción
+          // RHException mostrando que no se pudo insertar la Tarifa.
+           ServiceLocator.getInstance().rollback();
+           throw new RHException( "Tarifa DAO", "No pudo hallar la tarifa"+ e.getMessage());
+      }  finally {
+          // Libera la conexión con la base de datos.
+         ServiceLocator.getInstance().liberarConexion();
+      }
+      return valorTarifa;
+    }
+    
  }

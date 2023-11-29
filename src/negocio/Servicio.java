@@ -18,6 +18,7 @@ public class Servicio {
    private String f_fecha;
    private double q_calificacion;
    private int    q_cantidadDeTrayectos; 
+   private float  v_costoTotal;
    private int    k_numeroDocumentoM;
    private String k_tipoDocumentoM;
    private int    k_idCiudad;
@@ -50,10 +51,6 @@ public class Servicio {
     public void setF_horaDeInicio(String f_horaDeInicio) {
         this.f_horaDeInicio = f_horaDeInicio;
     }
-
-    
-
-    
 
     public String getF_fecha() {
         return f_fecha;
@@ -119,6 +116,14 @@ public class Servicio {
 
     public void setK_idCiudad(int k_idCiudad) {
         this.k_idCiudad = k_idCiudad;
+    }
+
+    public float getV_costoTotal() {
+        return v_costoTotal;
+    }
+
+    public void setV_costoTotal(float v_costoTotal) {
+        this.v_costoTotal = v_costoTotal;
     }
 
    
