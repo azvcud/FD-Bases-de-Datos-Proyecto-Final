@@ -66,7 +66,7 @@ public class SolicitanteDAO {
       
     }
     
-    public Solicitante buscarSolicitante(Integer k_numeroDocumento) throws RHException {
+    public Solicitante buscarSolicitante(long k_numeroDocumento) throws RHException {
         boolean existe = false;
         try {
             Solicitante e = new Solicitante(); //Instancia el objeto para retornar los datos del empleado
@@ -75,11 +75,11 @@ public class SolicitanteDAO {
                     + " FROM solicitante WHERE k_numeroDocumento = ?";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-            prepStmt.setInt(1, k_numeroDocumento);
+            prepStmt.setLong(1, k_numeroDocumento);
             ResultSet rs = prepStmt.executeQuery();
             while (rs.next()) {
                 //Asignación de los valores getResult al objeto empleado.
-                e.setK_numeroDocumento(rs.getInt(1));
+                e.setK_numeroDocumento(rs.getLong(1));
                 e.setK_tipoDocumento(rs.getString(2));
                 e.setN_primerNombre(rs.getString(3)); 
                 e.setN_segundoNombre(rs.getString(4));
@@ -108,7 +108,7 @@ public class SolicitanteDAO {
     
    
     
-    public void modificarSolicitante(int k_numeroDocumento, String n_primerNombre, String n_segundonombre,
+    public void modificarSolicitante(long k_numeroDocumento, String n_primerNombre, String n_segundonombre,
              String n_primerapellido, String n_segundoapellido, String n_sexo,int q_telefono, String n_correoelectronico, String n_direccion) throws RHException {
             //verifica que el objeto empleado exista.
             if (buscarSolicitante(k_numeroDocumento) != null) {
@@ -120,7 +120,7 @@ public class SolicitanteDAO {
                         + " q_telefono=?, n_correoelectronico=?,n_direccion=?  WHERE k_numeroDocumento = ? ";
                 Connection conexion = ServiceLocator.getInstance().tomarConexion();
                 PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-                prepStmt.setInt(9, k_numeroDocumento);
+                prepStmt.setLong(9, k_numeroDocumento);
                 prepStmt.setString(1,n_primerNombre);
                 prepStmt.setString(2,n_segundonombre);
                 prepStmt.setString(3,n_primerapellido);
@@ -148,7 +148,7 @@ public class SolicitanteDAO {
          
     }
     
-    public void eliminarSolicitante(int k_numeroDocumento)throws RHException {
+    public void eliminarSolicitante(long k_numeroDocumento)throws RHException {
             
         if (buscarSolicitante(k_numeroDocumento) != null) {
                 try{
@@ -157,7 +157,7 @@ public class SolicitanteDAO {
                 String strSQL = "DELETE FROM solicitante WHERE k_numeroDocumento=?";
                 Connection conexion = ServiceLocator.getInstance().tomarConexion();
                 PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-                prepStmt.setInt(1, k_numeroDocumento);
+                prepStmt.setLong(1, k_numeroDocumento);
                 prepStmt.executeUpdate();
                 prepStmt.close();
                 ServiceLocator.getInstance().commit();

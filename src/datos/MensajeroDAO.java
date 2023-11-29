@@ -75,7 +75,7 @@ public class MensajeroDAO {
     }
     
     
-     public Mensajero buscarMensajero(Integer k_numeroDocumento) throws RHException {
+     public Mensajero buscarMensajero(long k_numeroDocumento) throws RHException {
         boolean existe = false;
         try {
             Mensajero e = new Mensajero(); //Instancia el objeto para retornar los datos del empleado
@@ -83,14 +83,14 @@ public class MensajeroDAO {
                     + "n_primerapellido, n_segundoapellido, n_sexo, q_telefono, n_correoelectronico,n_direccion,"
                     + "n_nacionalidad, q_seguridadsocial, n_mediodeservicio, n_mediodetransporte,"
                     + "n_matricula, n_marca, v_pago, v_calificacion"
-                    + " FROM solicitante WHERE k_numeroDocumento = ?";
+                    + " FROM mensajero WHERE k_numeroDocumento = ?";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-            prepStmt.setInt(1, k_numeroDocumento);
+            prepStmt.setLong(1, k_numeroDocumento);
             ResultSet rs = prepStmt.executeQuery();
             while (rs.next()) {
                 //Asignación de los valores getResult al objeto empleado.
-                e.setK_numeroDocumento(rs.getInt(1));
+                e.setK_numeroDocumento(rs.getLong(1));
                 e.setK_tipoDocumento(rs.getString(2));
                 e.setN_primerNombre(rs.getString(3)); 
                 e.setN_segundoNombre(rs.getString(4));
@@ -126,8 +126,10 @@ public class MensajeroDAO {
     
    
     
-    public void modificarMensajero(int k_numeroDocumento, String n_primerNombre, String n_segundonombre,
-             String n_primerapellido, String n_segundoapellido, String n_sexo,long q_telefono, String n_correoelectronico, String n_direccion) throws RHException {
+    public void modificarMensajero(long k_numeroDocumento, String n_primerNombre, String n_segundonombre,
+             String n_primerapellido, String n_segundoapellido, String n_sexo,long q_telefono, String n_correoelectronico, String n_direccion,
+             String n_nacionalidad, boolean q_seguridadsocial, String n_mediodeservicio, String n_mediodetransporte,
+             String n_matricula, String n_marca) throws RHException {
             //verifica que el objeto empleado exista.
             if (buscarMensajero(k_numeroDocumento) != null) {
                 try{
@@ -135,10 +137,13 @@ public class MensajeroDAO {
 
                 String strSQL = "UPDATE mensajero SET n_primerNombre = ?, n_segundonombre=?,"
                         + "n_primerapellido=?, n_segundoapellido=?, n_sexo=?,"
-                        + " q_telefono=?, n_correoelectronico=?,n_direccion=?  WHERE k_numeroDocumento = ? ";
+                        + " q_telefono=?, n_correoelectronico=?,n_direccion=? "
+                        + "n_nacionalidad=?, q_seguridadsocial=?, n_mediodeservicio=?, n_mediodetransporte=?,"
+                        + "n_matricula=?, n_marca=?, v_pago=?, v_calificacion=?"
+                        + " WHERE k_numeroDocumento = ? ";
                 Connection conexion = ServiceLocator.getInstance().tomarConexion();
                 PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-                prepStmt.setInt(9, k_numeroDocumento);
+                prepStmt.setLong(16, k_numeroDocumento);
                 prepStmt.setString(1,n_primerNombre);
                 prepStmt.setString(2,n_segundonombre);
                 prepStmt.setString(3,n_primerapellido);
@@ -147,6 +152,14 @@ public class MensajeroDAO {
                 prepStmt.setLong(6,q_telefono);
                 prepStmt.setString(7,n_correoelectronico);
                 prepStmt.setString(8,n_direccion);
+                prepStmt.setString(9,n_nacionalidad);
+                prepStmt.setBoolean(10,q_seguridadsocial);
+                prepStmt.setString(11,n_mediodeservicio);
+                prepStmt.setString(12,n_mediodetransporte);
+                prepStmt.setString(13,n_matricula);
+                prepStmt.setString(14,n_marca);
+            
+
                 prepStmt.executeUpdate();
                 prepStmt.close();
                 ServiceLocator.getInstance().commit();
@@ -166,7 +179,7 @@ public class MensajeroDAO {
          
     }
     
-    public void eliminarMensajero(int k_numeroDocumento)throws RHException {
+    public void eliminarMensajero(long k_numeroDocumento)throws RHException {
             
         if (buscarMensajero(k_numeroDocumento) != null) {
                 try{
@@ -175,7 +188,7 @@ public class MensajeroDAO {
                 String strSQL = "DELETE FROM mensajero WHERE k_numeroDocumento=?";
                 Connection conexion = ServiceLocator.getInstance().tomarConexion();
                 PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-                prepStmt.setInt(1, k_numeroDocumento);
+                prepStmt.setLong(1, k_numeroDocumento);
                 prepStmt.executeUpdate();
                 prepStmt.close();
                 ServiceLocator.getInstance().commit();

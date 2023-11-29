@@ -6,6 +6,7 @@ package gestor;
 
 import datos.ServicioDAO;
 import datos.SolicitanteDAO;
+import datos.TarifaDAO;
 import java.sql.Time;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,6 +21,7 @@ import util.RHException;
  */
 public class ServicioGestor {
     private ServicioDAO servicioDAO;    //Objeto ServicioDAO para interactuar con la base de datos y las operaciones relacionadas con el Servicio.
+    private TarifaDAO tarifaDAO;
     private Servicio servicio;          //Objeto Servicio para manipulación y registro en la base de datos de Servicio.
     
     /**
@@ -29,7 +31,6 @@ public class ServicioGestor {
     
     public ServicioGestor() {
         servicioDAO = new ServicioDAO();
-       
     }
     
     /**
@@ -48,17 +49,17 @@ public class ServicioGestor {
      * @param k_tipoDocumentoS      Tipo de Documento del Solicitante del Servicio.
      * @throws RHException          Excepción en caso de que ocurra un error al momento de registrar el Servicio.
      */
-     public void registrarServicio(int k_numeroDeServicio,String n_tipoDeServicio, String f_horaDeInicio, String f_fecha,
-             int q_cantidadDeTrayectos, int k_idCiudad, int k_numeroDocumentoS, String k_tipoDocumentoS ) throws RHException {
+     public void registrarServicio(int k_numeroDeServicio, String n_tipoDeServicio, 
+             int q_cantidadDeTrayectos, float v_costoTotal, int k_idCiudad, int k_numeroDocumentoS, String k_tipoDocumentoS ) throws RHException {
       // Crea un objeto Servicio con los datos proporcionados
       servicio = new Servicio();
+      
       
       // Configura los atributos de Servicio
       servicio.setK_numeroDeServicio(k_numeroDeServicio);
       servicio.setN_tipoDeServicio(n_tipoDeServicio);
-      servicio.setF_horaDeInicio(f_horaDeInicio);
-      servicio.setF_fecha(f_fecha);
       servicio.setQ_cantidadDeTrayectos(q_cantidadDeTrayectos);
+      servicio.setV_costoTotal(v_costoTotal);
       servicio.setK_idCiudad(k_idCiudad);
       servicio.setK_numeroDocumentoS(k_numeroDocumentoS);        
       servicio.setK_tipoDocumentoS(k_tipoDocumentoS);
