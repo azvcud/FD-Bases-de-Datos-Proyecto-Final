@@ -70,7 +70,7 @@ public class ServicioDAO {
       
     }
     
-   public List<Servicio> buscarServiciosPorDocumento(long k_numeroDocumento) throws RHException {
+   public List<Servicio> buscarServiciosPorDocumentoSolicitante(long k_numeroDocumento) throws RHException {
         List<Servicio> servicios = new ArrayList<>();
         try {
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
@@ -98,4 +98,60 @@ public class ServicioDAO {
         }
         return servicios;
     }
+   
+    public List<Servicio> buscarServiciosPorDocumentoMensajero(String n_tipodeservicio) throws RHException {
+        List<Servicio> servicios = new ArrayList<>();
+        try {
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            String strSQL = "SELECT k_numerodeservicio, n_tipodeservicio, f_fecha, v_costototal, k_numerodocumentos FROM servicio WHERE servicio.n_tipodeservicio = ?";
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setString(1, n_tipodeservicio);
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                Servicio servicio = new Servicio();
+                servicio.setK_numeroDeServicio(rs.getInt("k_numerodeservicio"));
+                servicio.setN_tipoDeServicio(rs.getString("n_tipodeservicio"));
+                
+                // Convertir el Date a String antes de asignarlo al objeto Servicio
+                Date fecha = rs.getDate("f_fecha");
+                String fechaStr = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
+                servicio.setF_fecha(fechaStr);
+                
+                servicio.setV_costoTotal((float) rs.getDouble("v_costototal"));
+                servicio.setK_numeroDocumentoS(rs.getInt("k_numerodocumentos"));
+                servicios.add(servicio);
+            }
+            ServiceLocator.getInstance().liberarConexion();
+        } catch (SQLException e) {
+            throw new RHException("ServicioDAO", e.getMessage());
+        }
+        return servicios;
+    }
+   
+     public void añadirMensajero(int k_numerodeservicio, long k_numeroDocumentoM, String k_tipoDocumentom) throws RHException {
+            
+           try{
+                //Actualiza el mensajero del empleado en la base de datos.
+
+                String strSQL = "UPDATE servicio SET k_numerodocumentom = ?, k_tipodocumentom=?"
+                        + "WHERE servicio.k_numerodeservicio = ? ";
+                Connection conexion = ServiceLocator.getInstance().tomarConexion();
+                PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+                prepStmt.setLong(3, k_numerodeservicio);
+                prepStmt.setLong(1,k_numeroDocumentoM);
+                prepStmt.setString(2,k_tipoDocumentom);
+               
+                prepStmt.executeUpdate();
+                prepStmt.close();
+                ServiceLocator.getInstance().commit();
+                }
+               catch (SQLException e) {
+                    //En caso de un error realiza un rollback y lanza la excepción RHException.
+                    ServiceLocator.getInstance().rollback();
+                    throw new RHException("SolicitanteDAO", "No pudo modificar soliciante " + e.getMessage());
+                 } finally {
+                    //finaliza la coneccion con la base de datos.
+                      ServiceLocator.getInstance().liberarConexion();
+                 }
+         } 
 }

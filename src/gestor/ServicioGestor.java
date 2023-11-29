@@ -71,12 +71,25 @@ public class ServicioGestor {
     }
      
      
-    public List<Servicio> buscarServiciosPorDocumento(long k_numeroDocumento) throws RHException {
+    public List<Servicio> buscarServiciosPorDocumentoSolicitante(long k_numeroDocumento) throws RHException {
         List<Servicio> servicios = new ArrayList<>();
         
-        servicios=servicioDAO.buscarServiciosPorDocumento(k_numeroDocumento);
+        servicios=servicioDAO.buscarServiciosPorDocumentoSolicitante(k_numeroDocumento);
         return servicios;
     }    
+    
+    
+    public List<Servicio> buscarServiciosPorDocumentoMensajero(String tipoServicio) throws RHException {
+        List<Servicio> servicios = new ArrayList<>();
+        
+        servicios=servicioDAO.buscarServiciosPorDocumentoMensajero(tipoServicio);
+        return servicios;
+    }   
+    
+    
+    public void añadirMensajero(int k_numerodeservicio, long k_numeroDocumentoM, String k_tipoDocumentom) throws RHException {
+        servicioDAO.añadirMensajero(k_numerodeservicio, k_numeroDocumentoM, k_tipoDocumentom);
+    }
     //Getters y setter para acceder y modificar ServicioDAO y Servicio
     public ServicioDAO getServicioDAO() {
         return servicioDAO;
