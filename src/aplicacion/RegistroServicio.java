@@ -6,11 +6,14 @@ package aplicacion;
 
 import gestor.ActividadGestor;
 import gestor.CiudadGestor;
+import gestor.EstadoGestor;
 import gestor.MensajeroGestor;
 import gestor.ServicioGestor;
 import gestor.TarifaGestor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -28,11 +31,13 @@ public class RegistroServicio implements ActionListener{
     private ServicioGestor gestorServicio;
     private CiudadGestor gestorCiudad;
     private TarifaGestor gestorTarifa;
+    private EstadoGestor gestorEstado;
     private ActividadGestor gestorActividad;
     private DefaultTableModel modelo;
+    int contadorEstado=1;
 
     public RegistroServicio(VistaRegistroServicio vista, ServicioGestor gestorServicio, CiudadGestor gestorCiudad, TarifaGestor gestorTarifa
-            , ActividadGestor gestorActividad
+            , ActividadGestor gestorActividad, EstadoGestor gestorEstado
             , Aplicacion mediador) 
     {
         this.vista = vista;
@@ -40,6 +45,7 @@ public class RegistroServicio implements ActionListener{
         this.gestorCiudad = gestorCiudad;
         this.gestorTarifa = gestorTarifa;
         this.gestorActividad = gestorActividad;
+        this.gestorEstado = gestorEstado;
         this.mediador = mediador;
         
         this.vista.btnAgregarActividad.addActionListener(this);
@@ -83,9 +89,23 @@ public class RegistroServicio implements ActionListener{
             int k_numeroDocumentoS = Integer.parseInt(vista.txIdSolicitante.getText());
             String k_tipoDocumentoS = ((String)vista.cbTipoIdSolicitante.getSelectedItem());
             
-            float v_costoTotal = 45000f;
+            Map<String, Integer> preciosPorTipo = new HashMap<String, Integer>();
+            
+            preciosPorTipo.put("Documento", 2400);
+            preciosPorTipo.put("Factura", 2500);
+            preciosPorTipo.put("Pequeño", 4500);
+            preciosPorTipo.put("Mediano", 3600);
+            preciosPorTipo.put("Grande", 34000);
+           
+            
+            int precioTipo = preciosPorTipo.get(n_tipoDeServicio);
             
             try {
+                
+                int tarifaPorTrayecto=gestorCiudad.obtenerTarifaPorTrayecto(k_idCiudad);
+                
+                float v_costoTotal = precioTipo + (q_cantidadDeTrayectos*tarifaPorTrayecto);
+                
                 gestorServicio.registrarServicio(k_numeroDeServicio, n_tipoDeServicio, q_cantidadDeTrayectos, v_costoTotal, k_idCiudad, k_numeroDocumentoS, k_tipoDocumentoS);
                 
                 for(int i = 0; i < numero_Filas; i++) {
@@ -96,6 +116,8 @@ public class RegistroServicio implements ActionListener{
                     gestorActividad.registrarActividad(k_numeroDeTrayecto, n_descripcion, n_direccion, k_numeroDeServicio);
                 }
                 
+                gestorEstado.registrarEstado(contadorEstado,"Iniciado", "", k_numeroDeServicio);
+                contadorEstado=contadorEstado+1;
             } catch (RHException ex) {
                 Logger.getLogger(RegistroServicio.class.getName()).log(Level.SEVERE, null, ex);
             }

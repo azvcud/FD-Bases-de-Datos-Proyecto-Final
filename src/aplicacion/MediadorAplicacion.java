@@ -6,6 +6,7 @@ package aplicacion;
 
 import gestor.ActividadGestor;
 import gestor.CiudadGestor;
+import gestor.EstadoGestor;
 import gestor.MensajeroGestor;
 import gestor.ServicioGestor;
 import gestor.SolicitanteGestor;
@@ -38,6 +39,7 @@ public class MediadorAplicacion implements Aplicacion {
     private ServicioGestor gestorServicio; //Gestor de servicios
     private CiudadGestor gestorCiudad;
     private TarifaGestor gestorTarifa;
+    private EstadoGestor gestorEstado;
     private ActividadGestor gestorActividad;
     
     /**
@@ -58,13 +60,14 @@ public class MediadorAplicacion implements Aplicacion {
         gestorCiudad = new CiudadGestor();
         gestorTarifa = new TarifaGestor();
         gestorActividad = new ActividadGestor();
+        gestorEstado = new EstadoGestor();
         
         
         //Instancias de los oyentes
         inicioSesion = new InicioSesion(vistaInicioSesion, gestorSolicitante, gestorMensajero, this);
         registroMensajero = new RegistroMensajero(vistaRegistroMensajero, gestorMensajero, this);
         registroSolicitante = new RegistroSolicitante(vistaRegistroSolicitante, gestorSolicitante, this);
-        registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, gestorCiudad, gestorTarifa, gestorActividad, this);  
+        registroServicio = new RegistroServicio(vistaRegistroServicio, gestorServicio, gestorCiudad, gestorTarifa, gestorActividad, gestorEstado, this);  
         
         iniciar();
     } 
@@ -87,7 +90,7 @@ public class MediadorAplicacion implements Aplicacion {
             switch(mensaje) {
                 case "Registrar mensajero":
                     inicioSesion.desplegar(false);
-                    registroMensajero.desplegar(true);
+                    registroMensajero.desplegar(true); 
                     break;
                 case "Registrar solicitante":
                     inicioSesion.desplegar(false);
